@@ -263,7 +263,7 @@ Crucible is only available for 1.7.10, so be sure to set `VERSION=1.7.10`.
   https://www.feed-the-beast.com/modpacks/23-ftb-infinity-evolved-17
                                           ^^
   ```
-- `FTB_MODPACK_VERSION_ID`: optional, the numerical ID of the version to install. If not specified, the latest version will be installed. The "Version ID" can be obtained by hovering over a server file entry and grabbing [this ID in the URL](../images/ftba-version-id-popup.png).
+- `FTB_MODPACK_VERSION_ID`: optional, the numerical ID of the version to install. If not specified, the latest version will be installed. The "Version ID" can be obtained by hovering over a server file entry and grabbing [this ID in the URL](../../images/ftba-version-id-popup.png).
 
 ### Upgrading
 
@@ -330,7 +330,7 @@ Pass a page URL to the modpack or a specific file with `CF_PAGE_URL` such as the
 
 Instead of a URL, the modpack slug can be provided as `CF_SLUG`. The slug is the short identifier visible in the URL after "/modpacks/", such as
 
-![cf-slug](../images/cf-slug.png)
+![cf-slug](../../images/cf-slug.png)
 
 For example:
 ```
@@ -345,7 +345,7 @@ The latest file will be located and used by default, but if a specific version i
 
 The following shows where to get the URL to the specific file and also shows where the file ID is located:
 
-![cf-file-id](../images/cf-file-id.png)
+![cf-file-id](../../images/cf-file-id.png)
 
 The following examples all refer to version 1.0.7 of ATM8:
 
@@ -363,12 +363,12 @@ The following examples all refer to version 1.0.7 of ATM8:
 
 Quite often there are mods that need to be excluded, such as ones that did not properly declare as a client mod via the file's game versions. Similarly, there are some mods that are incorrectly tagged as client only. The following describes two options to exclude/include mods:
 
-Global and per modpack exclusions can be declared in a JSON file and referenced with `CF_EXCLUDE_INCLUDE_FILE`. By default, [the file bundled with the image](files/cf-exclude-include.json) will be used, but can be disabled by setting this to an empty string. The schema of this file [is documented here](https://github.com/itzg/mc-image-helper#excludeinclude-file-schema).
+Global and per modpack exclusions can be declared in a JSON file and referenced with `CF_EXCLUDE_INCLUDE_FILE`. By default, [the file bundled with the image](https://github.com/itzg/docker-minecraft-server/blob/master/files/cf-exclude-include.json) will be used, but can be disabled by setting this to an empty string. The schema of this file [is documented here](https://github.com/itzg/mc-image-helper#excludeinclude-file-schema).
 
 Alternatively, they can be excluded by passing a comma or space delimited list of **project** slugs or IDs via `CF_EXCLUDE_MODS`. Similarly, there are some mods that are incorrectly tagged as client only. For those, pass the **project** slugs or IDs via `CF_FORCE_INCLUDE_MODS`. These lists will be combined with the content of the exclude/include file, if given.
 
 A mod's project ID can be obtained from the right hand side of the project page:
-![cf-project-id](../images/cf-project-id.png)
+![cf-project-id](../../images/cf-project-id.png)
 
 If needing to iterate on the options above, set `CF_FORCE_SYNCHRONIZE` to "true" to ensure the exclude/includes are re-evaluated.
 
