@@ -1,5 +1,3 @@
-## Interacting with the server
-
 [RCON](http://wiki.vg/RCON) is enabled by default, so you can `exec` into the container to
 access the Minecraft server console:
 

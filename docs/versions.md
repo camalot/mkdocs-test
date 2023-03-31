@@ -1,5 +1,3 @@
-## Versions
-
 To use a different Minecraft version, pass the `VERSION` environment variable (case sensitive), which can have the value
 
 - LATEST (the default)

@@ -7,7 +7,16 @@ repo_url: https://github.com/camalot/mkdocs-test/
 edit_uri: blob/main/docs/
 theme:
   name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
   locale: en
+
   highlightjs: true
   hljs_languages:
     - yaml
@@ -18,8 +27,8 @@ theme:
 nav:
   - Home: index.md
   - Bedrock: bedrock.md
-  - Interacting With The Server: rcon.md
-  - Data Directory: data-directory.md
+  - 'Interacting With The Server': rcon.md
+  - 'Data Directory': data-directory.md
   - Versions: versions.md
 extra_css:
   - css/extra.css
