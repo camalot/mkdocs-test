@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build Docs
-      uses: athackst/mkdocs-simple-plugin
+      uses: athackst/mkdocs-simple-plugin@main
       with:
         publish_branch: gh-pages
         config: mkdocs.yml
