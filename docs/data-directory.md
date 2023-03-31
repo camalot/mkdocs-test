@@ -2,7 +2,7 @@
 
 Everything the container manages is located under the **container's** `/data` path, as shown here:
 
-![](docs/level-vs-world.drawio.png)
+![](docs/images/level-vs-world.drawio.png)
 
 > NOTE: The container path `/data` is pre-declared as a volume, so if you do nothing then it will be allocated as an anonymous volume. As such, it is subject to removal when the container is removed. 
 
