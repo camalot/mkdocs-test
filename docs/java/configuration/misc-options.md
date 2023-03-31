@@ -372,11 +372,13 @@ To also include the timestamp with each log, set `LOG_TIMESTAMP` to "true". The 
 
 RCON commands can be configured to execute when the server starts, a client connects, or a client disconnects.
 
-> When declaring several commands within a compose file environment variable, it's easiest to use YAML's `|-` [block style indicator](https://yaml-multiline.info/).
+!!! note
+
+    When declaring several commands within a compose file environment variable, it's easiest to use YAML's `|-` [block style indicator](https://yaml-multiline.info/).
 
 **On Server Start:**
 
-```yaml
+``` yaml
       RCON_CMDS_STARTUP:  |-
         gamerule doFireTick false
         pregen start 200
@@ -384,7 +386,7 @@ RCON commands can be configured to execute when the server starts, a client conn
 
 **On Client Connection:**
 
-```yaml
+``` yaml
       RCON_CMDS_ON_CONNECT:  |-
         team join New @a[team=]
 ```
@@ -394,21 +396,21 @@ RCON commands can be configured to execute when the server starts, a client conn
 
 **On Client Disconnect:**
 
-```yaml
+``` yaml
       RCON_CMDS_ON_DISCONNECT:  |-
         gamerule doFireTick true
 ```
 
 **On First Client Connect**
 
-```yaml
+``` yaml
       RCON_CMDS_FIRST_CONNECT: |-
         pregen stop
 ```
 
 **On Last Client Disconnect**
 
-```yaml
+``` yaml
       RCON_CMDS_LAST_DISCONNECT: |-
         kill @e[type=minecraft:boat]
         pregen start 200
@@ -420,7 +422,7 @@ RCON commands can be configured to execute when the server starts, a client conn
 Uses team NEW and team OLD to track players on the server. So move player with no team to NEW, run a command, move them to team OLD.
 [Reference Article](https://www.minecraftforum.net/forums/minecraft-java-edition/redstone-discussion-and/2213523-detect-players-first-join)
 
-```yaml
+``` yaml
       RCON_CMDS_STARTUP:  |-
         /pregen start 200
         /gamerule doFireTick false
