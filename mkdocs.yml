@@ -47,8 +47,8 @@ nav:
     - AutoPause:
       - "java/autopause/index.md"
       - "AutoStop": /java/autopause/autostop.md
-    - Running on RaspberryPi: /java/raspberrypi/index.md
-    - Mitigated Log4jShell Vulnerability: /java/log4j/index.md
+    - Running on RaspberryPi: java/raspberrypi/index.md
+    - Mitigated Log4jShell Vulnerability: java/log4j/index.md
   - Bedrock: bedrock/index.md
   - "Related Projects":
     - related-projects.md
