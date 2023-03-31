@@ -25,20 +25,25 @@ theme:
     - java
     - docker
     - shell
+    - json
 nav:
   - Home: index.md
   - Java Edition:
-    - 'Interacting With The Server': rcon.md
-    - 'Data Directory': data-directory.md
+    - 'Interacting With The Server': java/rcon.md
+    - 'Data Directory': java/data-directory.md
     - Versions:
-      - "Minecraft Versions": minecraft-versions.md
-      - "Java Versions": java-versions.md
+      - "Minecraft Versions": java/minecraft-versions.md
+      - "Java Versions": java/java-versions.md
     - "Healthcheck": healthcheck.md
     - "Deployment Templates and Examples":
-      - "Helm Charts": "deployment/helmcharts.md"
-      - "Amazon Web Services (AWS)": "deployment/aws.md"
-      - "Docker Compose": "deployment/docker-compose.md"
-  - Bedrock: bedrock.md
+      - "Helm Charts": "java/deployment/helmcharts.md"
+      - "Amazon Web Services (AWS)": "java/deployment/aws.md"
+      - "Docker Compose": "java/deployment/docker-compose.md"
+    - Troubleshooting: java/troubleshooting/index.md
+    - Running server with a packwiz modpack: packwiz/index.md
+    - Working with mods and plugins: mods-plugins/index.md
+    - Server Configuration: configuration/index.md
+  - Bedrock: bedrock/index.md
   - "Related Projects":
     - related-projects.md
     - "itzg/minecraft-bedrock-server": https://github.com/itzg/docker-minecraft-bedrock-server
