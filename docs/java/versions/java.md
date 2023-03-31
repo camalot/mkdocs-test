@@ -1,6 +1,8 @@
 ## Running Minecraft server on different Java version
 
-> **For Forge versions less than 1.18, you _must_ use the `java8-multiarch` (or other java8) image tag.**
+!!! note
+
+    For Forge versions less than 1.18, you _must_ use the `java8-multiarch` (or other java8) image tag.
 
 When using the image `itzg/minecraft-server` without a tag, the `latest` image tag is implied from the table below. To use a different version of Java, please use an alternate tag to run your Minecraft server container.
 
@@ -26,9 +28,11 @@ For example, to use Java version 8 on any supported architecture:
 
     docker run --name mc itzg/minecraft-server:java8-multiarch
 
-> Keep in mind that some versions of Minecraft server, such as Forge before 1.17, can't work on the newest versions of Java. Instead, one of the Java 8 images should be used. Also, FORGE doesn't support openj9 JVM implementation.
-> 
-> Some versions of vanilla Minecraft, such as 1.10, also do not run correctly with Java 17. If in doubt, use `java8-multiarch` for any version less than 1.17.
+!!! note
+
+    Keep in mind that some versions of Minecraft server, such as Forge before 1.17, can't work on the newest versions of Java. Instead, one of the Java 8 images should be used. Also, FORGE doesn't support openj9 JVM implementation.
+    
+    Some versions of vanilla Minecraft, such as 1.10, also do not run correctly with Java 17. If in doubt, use `java8-multiarch` for any version less than 1.17.
 
 ### Deprecated Image Tags
 

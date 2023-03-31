@@ -14,7 +14,8 @@ or a specific version:
 
 When using "LATEST" or "SNAPSHOT" an upgrade can be performed by simply restarting the container.
 During the next startup, if a newer version is available from the respective release channel, then
-the new server jar file is downloaded and used. _NOTE: over time you might see older versions of
-the server jar remain in the `/data` directory. It is safe to remove those._
+the new server jar file is downloaded and used. 
 
+!!! note
 
+    Over time you might see older versions of the server jar remain in the `/data` directory. It is safe to remove those.

@@ -33,8 +33,8 @@ nav:
     - "Interacting With The Server": "java/rcon.md"
     - "Data Directory": "java/data-directory.md"
     - "Versions":
-      - "Minecraft Versions": "java/minecraft-versions.md"
-      - "Java Versions": "java/java-versions.md"
+      - "Minecraft Versions": "java/versions/minecraft.md"
+      - "Java Versions": "java/versions/java.md"
     - "Healthcheck": "java/healthcheck.md"
     - "Deployment Templates and Examples":
       - "Helm Charts": "java/deployment/helmcharts.md"
