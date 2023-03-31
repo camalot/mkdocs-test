@@ -9,14 +9,14 @@ b418af073764        mc                  "/start"            43 seconds ago      
 
 You can also query the container's health in a script friendly way:
 
-```
+``` shell
 > docker container inspect -f "{{.State.Health.Status}}" mc
 healthy
 ```
 
 There's actually a wrapper script called `mc-health` that takes care of calling `mc-monitor status` with the correct arguments. If needing to customize the health checks parameters, such as in a compose file, then use something like the following in the service declaration:
 
-```yaml
+``` yaml
 healthcheck:
   test: mc-health
   start_period: 1m

@@ -32,7 +32,9 @@ To produce a multi-line MOTD, you will need to double escape the newline such as
 
 The difficulty level (default: `easy`) can be set like:
 
-    docker run -d -e DIFFICULTY=hard ...
+```
+docker run -d -e DIFFICULTY=hard ...
+```
 
 Valid values are: `peaceful`, `easy`, `normal`, and `hard`, and an
 error message will be output in the logs if it's not one of these
@@ -40,9 +42,12 @@ values.
 
 ### Whitelist Players
 
-> **NOTE** it is very important to set this with servers exposed to the internet where you want only limited players to join.
+!!! note 
+    
+    It is very important to set this with servers exposed to the internet where you want only limited players to join.
 
-To whitelist players for your Minecraft server, you can:
+To whitelist players for your Minecraft server, you can:  
+
 - Provide a list of usernames and/or UUIDs separated by commas via the `WHITELIST` environment variable  
   `docker run -d -e WHITELIST=user1,uuid2 ...`
 - Provide the url or path to a whitelist file via `WHITELIST_FILE` environment variable  
@@ -52,17 +57,22 @@ When either is set, [whitelisting of connecting users](https://minecraft.fandom.
 
 If whitelist configuration already exists, `WHITELIST_FILE` will not be retrieved and any usernames in `WHITELIST` are **added** to the whitelist configuration. You can enforce regeneration of the whitelist on each server startup by setting `OVERRIDE_WHITELIST` to "true". This will delete the whitelist file before processing whitelist configuration.
 
-> NOTE: You can provide both `WHITELIST_FILE` and `WHITELIST`, which are processed in that order.
+!!! note
 
-> NOTE: UUIDs passed via `WHITELIST` need to be the dashed variant, otherwise it not be recognised and instead added as a username.
+    You can provide both `WHITELIST_FILE` and `WHITELIST`, which are processed in that order.
 
-> If running Minecraft 1.7.5 or earlier, these variables will apply to `white-list.txt`, with 1.7.6 implementing support for `whitelist.json`. Make sure your `WHITELIST_FILE` is in the appropriate format.
+!!! note 
+    
+    UUIDs passed via `WHITELIST` need to be the dashed variant, otherwise it not be recognised and instead added as a username.
+    
+    If running Minecraft 1.7.5 or earlier, these variables will apply to `white-list.txt`, with 1.7.6 implementing support for `whitelist.json`. Make sure your `WHITELIST_FILE` is in the appropriate format.
 
 To [enforce the whitelist changes immediately](https://minecraft.fandom.com/wiki/Server.properties#enforce-whitelist) when whitelist commands are used , set `ENFORCE_WHITELIST` to "true".
 
 ### Op/Administrator Players
 
-Similar to the whitelist, to add users as operators (aka adminstrators) to your Minecraft server, you can:
+Similar to the whitelist, to add users as operators (aka adminstrators) to your Minecraft server, you can:  
+
 - Provide te url or path to an ops file via `OPS_FILE` environment variable  
     `docker run -d -e OPS_FILE=https://config.example.com/extra/ops.json ...`
 - Provide a list of usernames and/or UUIDs separated by commas via the `OPS` environment variable  
@@ -70,7 +80,9 @@ Similar to the whitelist, to add users as operators (aka adminstrators) to your 
 
 If ops configuration already exists, `OPS_FILE` will not be retrieved and any usernames in `OPS` are **added** to the ops configuration. You can enforce regeneration of the ops configuration on each server startup by setting `OVERRIDE_OPS` to "true". This will delete the ops file before processing ops configuration.
 
-> Similar to whitelists, you can provide both `OPS_FILE` and `OPS`, and Minecraft 1.7.5 or earlier will use `ops.txt` rather than `ops.json`.
+!!! note 
+
+    Similar to whitelists, you can provide both `OPS_FILE` and `OPS`, and Minecraft 1.7.5 or earlier will use `ops.txt` rather than `ops.json`.
 
 ### Enable/disable initial selection of datapacks
 
@@ -99,7 +111,9 @@ The default password is "minecraft" but **change the password before deploying i
 
 **DO NOT MAP THE RCON PORT EXTERNALLY** unless you aware of all the consequences and have set a **secure password** with `RCON_PASSWORD`. 
 
-> Mapping ports (`-p` command line or `ports` in compose) outside the container and docker networking needs to be a purposeful choice. Most production Docker deployments do not need any of the Minecraft ports mapped externally from the server itself.
+!!! info 
+
+    Mapping ports (`-p` command line or `ports` in compose) outside the container and docker networking needs to be a purposeful choice. Most production Docker deployments do not need any of the Minecraft ports mapped externally from the server itself.
 
 By default, the server listens for RCON on port 25575 within the container. It can be changed with `RCON_PORT` but only do this if you have a very good reason. **DO NOT change `rcon.port` via `server.properties`** or integrations will break.
 

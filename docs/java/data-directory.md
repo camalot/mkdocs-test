@@ -21,7 +21,7 @@ When attached in this way you can stop the server, edit the configuration under 
 
 With Docker Compose, setting up a host attached directory is even easier since relative paths can be configured. For example, with the following `docker-compose.yml` Docker will automatically create/attach the relative directory `minecraft-data` to the container.
 
-```yaml
+``` yaml title="docker-compose.yml"
 version: "3"
 
 services:
@@ -47,22 +47,27 @@ services:
 
 If you had used the commands in the first section, without the `-v` volume attachment, then an anonymous data volume was created by Docker. You can later bring over that content to a named or host attached volume using the following procedure.
 
-> In this example, it is assumed the original container was given a `--name` of "mc", so change the container identifier accordingly.
+!!! note 
 
-> You can also locate the Docker-managed directory from the `Source` field obtained from `docker inspect <container id or name> -f "{{json .Mounts}}"`
+    In this example, it is assumed the original container was given a `--name` of "mc", so change the container identifier accordingly.
+    
+    You can also locate the Docker-managed directory from the `Source` field obtained from `docker inspect <container id or name> -f "{{json .Mounts}}"`
 
 First, stop the existing container:
-```shell
+
+``` shell
 docker stop mc
 ```
 
 Use a temporary container to copy over the anonymous volume's content into a named volume, "mc" in this case:
-```shell
+
+``` shell
 docker run --rm --volumes-from mc -v mc:/new alpine cp -avT /data /new
 ```
 
 Now you can recreate the container with any environment variable changes, etc by attaching the named volume created from the previous step:
-```shell
+
+``` shell
 docker run -d -it --name mc-new -v mc:/data -p 25565:25565 -e EULA=TRUE -e MEMORY=2G itzg/minecraft-server
 ```
 
@@ -70,7 +75,7 @@ docker run -d -it --name mc-new -v mc:/data -p 25565:25565 -e EULA=TRUE -e MEMOR
 
 The `Source` field from the output of this command will show where the anonymous volume is mounted from:
 
-```shell
+``` shell
 docker inspect -f "{{json .Mounts}}" CONTAINER_NAME_OR_ID
 ```
 
