@@ -2,7 +2,7 @@ An option to stop the server after a specified time has been added for niche app
 
 Note that the docker container variables have to be set accordingly (restart policy set to "no") and that the container has to be manually restarted.
 
-A starting, example compose file has been provided in [examples/docker-compose-autostop.yml](examples/docker-compose-autostop.yml).
+A starting, example compose file has been provided in [examples/docker-compose-autostop.yml](https://github.com/itzg/docker-minecraft-server/blob/master/examples/docker-compose-autostop.yml).
 
 Enable the Autostop functionality by setting:
 

@@ -16,7 +16,7 @@ The utility used to wake the server (`knock(d)`) works at network interface leve
 
 A file called `.paused` is created in `/data` directory when the server is paused and removed when the server is resumed. Other services may check for this file's existence before waking the server.
 
-A starting, example compose file has been provided in [examples/docker-compose-autopause.yml](examples/docker-compose-autopause.yml).
+A starting, example compose file has been provided in [examples/docker-compose-autopause.yml](https://github.com/itzg/docker-minecraft-server/blob/master/examples/docker-compose-autopause.yml).
 
 ### Enabling Autopause
 

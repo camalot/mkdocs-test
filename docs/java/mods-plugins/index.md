@@ -173,7 +173,7 @@ https://edge.forgecdn.net/files/2871/647/ToastControl-1.15.2-3.0.1.jar
 ```
 > Blank lines and lines that start with a `#` will be ignored
 
-> [This compose file](examples/docker-compose-mods-file.yml) shows another example of using this feature.
+> [This compose file](https://github.com/itzg/docker-minecraft-server/blob/master/examples/docker-compose-mods-file.yml) shows another example of using this feature.
 
 > It is recommended to combine this option with `REMOVE_OLD_MODS=TRUE` to ensure the mods/plugins remain consistent with the file's listing.
 
@@ -213,7 +213,7 @@ docker run ... -v $HOME/worlds:/worlds:ro -e WORLD=/worlds/basic
 
 The following diagram shows how this option can be used in a compose deployment with a relative directory:
 
-![](images/world-copy-compose-project.drawio.png)
+![](../images/world-copy-compose-project.drawio.png)
 
 ### Overwrite world on start
 The world will only be downloaded or copied if it doesn't exist already. Set `FORCE_WORLD_COPY=TRUE` to force overwrite the world on every server start.

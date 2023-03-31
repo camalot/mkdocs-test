@@ -316,7 +316,7 @@ When `MEMORY` is greater than or equal to 12G, then the Aikar flags will be adju
 ### HTTP Proxy
 
 You may configure the use of an HTTP/HTTPS proxy by passing the proxy's URL via the `PROXY`
-environment variable. In [the example compose file](examples/docker-compose-proxied.yml) it references
+environment variable. In [the example compose file](https://github.com/itzg/docker-minecraft-server/blob/master/examples/docker-compose-proxied.yml) it references
 a companion squid proxy by setting the equivalent of
 
     -e PROXY=proxy:3128
