@@ -26,10 +26,16 @@ theme:
     - shell
 nav:
   - Home: index.md
+  - Java Edition:
+    - 'Interacting With The Server': rcon.md
+    - 'Data Directory': data-directory.md
+    - Versions:
+      - "Minecraft Versions": minecraft-versions.md
+      - "Java Versions": java-versions.md
+    - "Healthcheck": healthcheck.md
   - Bedrock: bedrock.md
-  - 'Interacting With The Server': rcon.md
-  - 'Data Directory': data-directory.md
-  - Versions: versions.md
+  - "Related Projects": related-projects.md
+
 extra_css:
   - css/extra.css
 markdown_extensions:
