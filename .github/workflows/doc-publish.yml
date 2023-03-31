@@ -1,0 +1,18 @@
+name: Documentation Build and Publish
+on:
+  push:
+    branches:
+      - master
+      - test/**
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build Docs
+      uses: athackst/mkdocs-simple-plugin
+      with:
+        publish_branch: gh-pages
+        config: mkdocs.yml
