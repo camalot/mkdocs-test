@@ -1,65 +1,55 @@
+---
 site_name: MkDocs Test Documentation
 site_url: https://camalot.github.io/mkdocs-test/
 site_description: Testing MKDocs.
 site_author: DarthMinos#1161 (@camalot)
-
 repo_url: https://github.com/camalot/mkdocs-test/
 edit_uri: blob/main/docs/
-
 theme:
-  name: mkdocs
+  name: material
   locale: en
-  # analytics: {gtag: 'G-XXXXXXXXXX'}
   highlightjs: true
   hljs_languages:
-  - yaml
-  - bash
-  - java
-  - docker
-  - shell
-
+    - yaml
+    - bash
+    - java
+    - docker
+    - shell
 nav:
-- Home: index.md
-- Bedrock: bedrock.md
-- Interacting With The Server: rcon.md
-- Data Directory: data-directory.md
-- Versions: versions.md
-
+  - Home: index.md
+  - Bedrock: bedrock.md
+  - Interacting With The Server: rcon.md
+  - Data Directory: data-directory.md
+  - Versions: versions.md
 extra_css:
-- css/extra.css
-
+  - css/extra.css
 markdown_extensions:
-- toc:
-  permalink: 
-- attr_list
-- def_list
-- tables
-- pymdownx.highlight:
-  use_pygments: false
-- pymdownx.snippets
-- pymdownx.superfences
-- mdx_gh_links:
-  user: mkdocs
-  repo: mkdocs
-- mkdocs-click
-
+  - toc:
+    permalink: 
+  - attr_list
+  - def_list
+  - tables
+  - pymdownx.highlight:
+    use_pygments:
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - mdx_gh_links: 
+    user: camalot
+    repo: mkdocs-test
+  - mkdocs-click
 copyright: Copyright &copy; 2023.
-
 plugins:
-    - search
-    - autorefs
-    - literate-nav:
-        nav_file: README.md
-        implicit_index: true
-    - mkdocstrings:
-        handlers:
-          python:
-            options:
-              docstring_section_style: list
-              members_order: source
-              show_root_heading: true
-              show_source: false
-              show_signature_annotations: true
-
-# watch:
-#     - mkdocs
+  - search
+  - autorefs
+  - literate-nav:
+    nav_file: README.md
+    implicit_index: true
+  - mkdocstrings:
+    handlers:
+      python:
+        options:
+          docstring_section_style: list
+          members_order: source
+          show_root_heading: true
+          show_source: false
+          show_signature_annotations: true
