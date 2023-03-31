@@ -15,6 +15,7 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.top
+    - navigation.indexes
   locale: en
 
   highlightjs: true
@@ -33,8 +34,22 @@ nav:
       - "Minecraft Versions": minecraft-versions.md
       - "Java Versions": java-versions.md
     - "Healthcheck": healthcheck.md
+    - "Deployment Templates and Examples":
+      - "Helm Charts": "deployment/helmcharts.md"
+      - "Amazon Web Services (AWS)": "deployment/aws.md"
+      - "Docker Compose": "deployment/docker-compose.md"
   - Bedrock: bedrock.md
-  - "Related Projects": related-projects.md
+  - "Related Projects":
+    - related-projects.md
+    - "itzg/minecraft-bedrock-server": https://github.com/itzg/docker-minecraft-bedrock-server
+    - "mc-router": https://github.com/itzg/mc-router
+    - "itzg/bungeecord": https://github.com/itzg/docker-bungeecord/
+    - "itzg/mc-backup": https://github.com/itzg/docker-mc-backup
+    - "rcon-cli": https://github.com/itzg/rcon-cli
+    - "mc-monitor": https://github.com/itzg/mc-monitor
+    - "mc-image-helper": https://github.com/itzg/mc-image-helper
+    - "itzg/rcon": https://github.com/itzg/docker-rcon-web-admin
+
 
 extra_css:
   - css/extra.css
