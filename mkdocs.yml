@@ -34,8 +34,8 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
   - mdx_gh_links:
-    user: camalot
-    repo: mkdocs-test
+      user: camalot
+      repo: mkdocs-test
   - mkdocs-click
 copyright: Copyright &copy; 2023.
 plugins:
