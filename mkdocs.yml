@@ -23,6 +23,7 @@ nav:
 - Bedrock: bedrock.md
 - Interacting With The Server: rcon.md
 - Data Directory: data-directory.md
+- Versions: versions.md
 
 extra_css:
 - css/extra.css
