@@ -21,6 +21,7 @@ theme:
 nav:
     - Home: index.md
     - Bedrock: bedrock.md
+    - Interacting With The Server: rcon.md
 
 extra_css:
     - css/extra.css
