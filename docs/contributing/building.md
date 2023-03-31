@@ -8,3 +8,4 @@ To build for local testing, use:
 
 ```shell script
 docker buildx build --platform=linux/amd64 --tag mc-multiarch --load .
+```
