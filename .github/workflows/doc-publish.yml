@@ -11,8 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Build Docs
-      uses: athackst/mkdocs-simple-plugin@main
-      with:
-        publish_branch: gh-pages
-        config: mkdocs.yml
+    - name: Deploy docs
+      uses: mhausenblas/mkdocs-deploy-gh-pages@master
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
