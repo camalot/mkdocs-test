@@ -2,7 +2,9 @@ Everything the container manages is located under the **container's** `/data` pa
 
 ![](../images/level-vs-world.drawio.png)
 
-> NOTE: The container path `/data` is pre-declared as a volume, so if you do nothing then it will be allocated as an anonymous volume. As such, it is subject to removal when the container is removed. 
+!!! note
+
+    The container path `/data` is pre-declared as a volume, so if you do nothing then it will be allocated as an anonymous volume. As such, it is subject to removal when the container is removed. 
 
 ### Attaching data directory to host filesystem
 
@@ -37,7 +39,9 @@ services:
       - ./minecraft-data:/data
 ```
 
-> NOTE: if you have SELinux enabled, then you might need to add `:Z` to the end of volume mount specifications, [as described here](https://prefetch.net/blog/2017/09/30/using-docker-volumes-on-selinux-enabled-servers/).
+!!! note
+
+    if you have SELinux enabled, then you might need to add `:Z` to the end of volume mount specifications, [as described here](https://prefetch.net/blog/2017/09/30/using-docker-volumes-on-selinux-enabled-servers/).
 
 ### Converting anonymous `/data` volume to named volume
 
@@ -70,4 +74,6 @@ The `Source` field from the output of this command will show where the anonymous
 docker inspect -f "{{json .Mounts}}" CONTAINER_NAME_OR_ID
 ```
 
-> **NOTE** On Windows with WSL the volumes path is `\\wsl$\docker-desktop-data\data\docker\volumes`
+!!! note
+
+    On Windows with WSL the volumes path is `\\wsl$\docker-desktop-data\data\docker\volumes`

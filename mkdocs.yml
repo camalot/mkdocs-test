@@ -68,6 +68,7 @@ nav:
 extra_css:
   - css/extra.css
 markdown_extensions:
+  - admonition
   - toc:
       permalink: 
   - attr_list
@@ -75,6 +76,7 @@ markdown_extensions:
   - tables
   - pymdownx.highlight:
       use_pygments:
+  - pymdownx.details
   - pymdownx.snippets
   - pymdownx.superfences
   - mdx_gh_links:
