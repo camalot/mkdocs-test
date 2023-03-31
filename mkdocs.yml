@@ -25,15 +25,15 @@ extra_css:
   - css/extra.css
 markdown_extensions:
   - toc:
-    permalink: 
+      permalink: 
   - attr_list
   - def_list
   - tables
   - pymdownx.highlight:
-    use_pygments:
+      use_pygments:
   - pymdownx.snippets
   - pymdownx.superfences
-  - mdx_gh_links: 
+  - mdx_gh_links:
     user: camalot
     repo: mkdocs-test
   - mkdocs-click
@@ -42,14 +42,14 @@ plugins:
   - search
   - autorefs
   - literate-nav:
-    nav_file: README.md
-    implicit_index: true
+      nav_file: README.md
+      implicit_index: true
   - mkdocstrings:
-    handlers:
-      python:
-        options:
-          docstring_section_style: list
-          members_order: source
-          show_root_heading: true
-          show_source: false
-          show_signature_annotations: true
+      handlers:
+        python:
+          options:
+            docstring_section_style: list
+            members_order: source
+            show_root_heading: true
+            show_source: false
+            show_signature_annotations: true
