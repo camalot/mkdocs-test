@@ -171,11 +171,14 @@ https://edge.forgecdn.net/files/2926/27/ProgressiveBosses-2.1.5-mc1.15.2.jar
 https://edge.forgecdn.net/files/3272/32/jei-1.15.2-6.0.3.16.jar
 https://edge.forgecdn.net/files/2871/647/ToastControl-1.15.2-3.0.1.jar
 ```
-> Blank lines and lines that start with a `#` will be ignored
 
-> [This compose file](https://github.com/itzg/docker-minecraft-server/blob/master/examples/docker-compose-mods-file.yml) shows another example of using this feature.
+!!! note
 
-> It is recommended to combine this option with `REMOVE_OLD_MODS=TRUE` to ensure the mods/plugins remain consistent with the file's listing.
+    Blank lines and lines that start with a `#` will be ignored
+
+    [This compose file](https://github.com/itzg/docker-minecraft-server/blob/master/examples/docker-compose-mods-file.yml) shows another example of using this feature.
+
+    It is recommended to combine this option with `REMOVE_OLD_MODS=TRUE` to ensure the mods/plugins remain consistent with the file's listing.
 
 ### Remove old mods/plugins
 
@@ -186,7 +189,9 @@ To use this option pass the environment variable `REMOVE_OLD_MODS=TRUE`, such as
 
     docker run -d -e REMOVE_OLD_MODS=TRUE -e MODPACK=http://www.example.com/mods/modpack.zip ...
 
-**WARNING:** All content of the `mods` or `plugins` directory will be deleted
+!!! danger 
+
+    All content of the `mods` or `plugins` directory will be deleted
 before unpacking new content from the MODPACK or MODS.
 
 ## Working with world data
