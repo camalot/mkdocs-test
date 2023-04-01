@@ -12,32 +12,40 @@ Enable [Forge server](http://www.minecraftforge.net/) mode by adding a `-e TYPE=
 
 The overall version is specified by `VERSION`, [as described in the section above](#versions) and will run the recommended Forge version by default. You can also choose to run a specific Forge version with `FORGE_VERSION`, such as `-e FORGE_VERSION=14.23.5.2854`.
 
-    docker run -d -v /path/on/host:/data \
-        -e TYPE=FORGE \
-        -e VERSION=1.12.2 -e FORGE_VERSION=14.23.5.2854 \
-        -p 25565:25565 -e EULA=TRUE --name mc itzg/minecraft-server
+``` shell
+docker run -d -v /path/on/host:/data \
+    -e TYPE=FORGE \
+    -e VERSION=1.12.2 -e FORGE_VERSION=14.23.5.2854 \
+    -p 25565:25565 -e EULA=TRUE --name mc itzg/minecraft-server
+```
 
 To use a pre-downloaded Forge installer, place it in the attached `/data` directory and
 specify the name of the installer file with `FORGE_INSTALLER`, such as:
 
-    docker run -d -v /path/on/host:/data ... \
-        -e FORGE_INSTALLER=forge-1.11.2-13.20.0.2228-installer.jar ...
+``` shell
+docker run -d -v /path/on/host:/data ... \
+    -e FORGE_INSTALLER=forge-1.11.2-13.20.0.2228-installer.jar ...
+```
 
 To download a Forge installer from a custom location, such as your own file repository, specify
 the URL with `FORGE_INSTALLER_URL`, such as:
 
-    docker run -d -v /path/on/host:/data ... \
-        -e FORGE_INSTALLER_URL=http://HOST/forge-1.11.2-13.20.0.2228-installer.jar ...
+``` shell
+docker run -d -v /path/on/host:/data ... \
+    -e FORGE_INSTALLER_URL=http://HOST/forge-1.11.2-13.20.0.2228-installer.jar ...
+```
 
 In both of the cases above, there is no need for the `VERSION` or `FORGEVERSION` variables.
 
-> If an error occurred while installing Forge, it might be possible to resolve by temporarily setting `FORGE_FORCE_REINSTALL` to "true". Be sure to remove that variable after successfully starting the server.
+!!! note
+    
+    If an error occurred while installing Forge, it might be possible to resolve by temporarily setting `FORGE_FORCE_REINSTALL` to "true". Be sure to remove that variable after successfully starting the server.
 
 ### Running a Fabric Server
 
 Enable [Fabric server](https://fabricmc.net/) mode by adding a `-e TYPE=FABRIC` to your command-line.
 
-```
+``` shell
 docker run -d -v /path/on/host:/data \
     -e TYPE=FABRIC \
     -p 25565:25565 -e EULA=TRUE --name mc itzg/minecraft-server
@@ -47,16 +55,19 @@ By default, the container will install the latest [fabric server launcher](https
 
 A specific loader or launcher version other than the latest can be requested using `FABRIC_LOADER_VERSION` and `FABRIC_LAUNCHER_VERSION` respectively, such as:
 
-```
+``` shell
 docker run -d -v /path/on/host:/data ... \
     -e TYPE=FABRIC \
     -e FABRIC_LAUNCHER_VERSION=0.10.2 \
     -e FABRIC_LOADER_VERSION=0.13.1
 ```
 
-> If you wish to use an alternative launcher you can:
-> * Provide the path to a custom launcher jar available to the container with `FABRIC_LAUNCHER`, relative to `/data` (such as `-e FABRIC_LAUNCHER=fabric-server-custom.jar`)
-> * Provide the URL to a custom launcher jar with `FABRIC_LAUNCHER_URL` (such as `-e FABRIC_LAUNCHER_URL=http://HOST/fabric-server-custom.jar`)
+!!! note 
+    
+    If you wish to use an alternative launcher you can:  
+
+    - Provide the path to a custom launcher jar available to the container with `FABRIC_LAUNCHER`, relative to `/data` (such as `-e FABRIC_LAUNCHER=fabric-server-custom.jar`)
+    - Provide the URL to a custom launcher jar with `FABRIC_LAUNCHER_URL` (such as `-e FABRIC_LAUNCHER_URL=http://HOST/fabric-server-custom.jar`)
 
 See the [Working with mods and plugins](#working-with-mods-and-plugins) section to set up Fabric mods and configuration.
 
@@ -64,7 +75,7 @@ See the [Working with mods and plugins](#working-with-mods-and-plugins) section 
 
 Enable [Quilt server](https://quiltmc.org/) mode by adding a `-e TYPE=QUILT` to your command-line.
 
-```
+``` shell
 docker run -d -v /path/on/host:/data \
     -e TYPE=QUILT \
     -p 25565:25565 -e EULA=TRUE --name mc itzg/minecraft-server
@@ -74,16 +85,19 @@ By default, the container will install the latest [quilt server launcher](https:
 
 A specific loader or installer version other than the latest can be requested using `QUILT_LOADER_VERSION` and `QUILT_INSTALLER_VERSION` respectively, such as:
 
-```
+``` shell
 docker run -d -v /path/on/host:/data ... \
     -e TYPE=QUILT \
     -e QUILT_LOADER_VERSION=0.16.0 \
     -e QUILT_INSTALLER_VERSION=0.4.1
 ```
 
-> If you wish to use an alternative launcher you can: 
-> * Provide the path to a custom launcher jar available to the container with `QUILT_LAUNCHER`, relative to `/data` (such as `-e QUILT_LAUNCHER=quilt-server-custom.jar`)
-> * Provide the URL to a custom launcher jar with `QUILT_LAUNCHER_URL` (such as `-e QUILT_LAUNCHER_URL=http://HOST/quilt-server-custom.jar`)
+!!! note
+
+    If you wish to use an alternative launcher you can: 
+
+    - Provide the path to a custom launcher jar available to the container with `QUILT_LAUNCHER`, relative to `/data` (such as `-e QUILT_LAUNCHER=quilt-server-custom.jar`)
+    - Provide the URL to a custom launcher jar with `QUILT_LAUNCHER_URL` (such as `-e QUILT_LAUNCHER_URL=http://HOST/quilt-server-custom.jar`)
 
 See the [Working with mods and plugins](#working-with-mods-and-plugins) section to set up Quilt mods and configuration.
 
@@ -91,9 +105,11 @@ See the [Working with mods and plugins](#working-with-mods-and-plugins) section 
 
 Enable Bukkit/Spigot server mode by adding a `-e TYPE=BUKKIT` or `-e TYPE=SPIGOT` to your command-line.
 
-    docker run -d -v /path/on/host:/data \
-        -e TYPE=SPIGOT \
-        -p 25565:25565 -e EULA=TRUE --name mc itzg/minecraft-server
+``` shell
+docker run -d -v /path/on/host:/data \
+    -e TYPE=SPIGOT \
+    -p 25565:25565 -e EULA=TRUE --name mc itzg/minecraft-server
+```
 
 If the downloaded server jar is corrupted, set `FORCE_REDOWNLOAD` to "true" to force a re-download during next container startup. After successfully re-downloading, you should remove that or set to "false".
 
@@ -132,7 +148,9 @@ A [Pufferfish](https://github.com/pufferfish-gg/Pufferfish) server, which is "a 
 
     -e TYPE=PUFFERFISH
 
-> NOTE: The `VERSION` variable is used to select branch latest, 1.18, or 1.17. Use PUFFERFISH_BUILD to really select the SERVER VERSION number.
+!!! note
+
+    The `VERSION` variable is used to select branch latest, 1.18, or 1.17. Use PUFFERFISH_BUILD to really select the SERVER VERSION number.
 
 Extra variables:
 - `PUFFERFISH_BUILD=lastSuccessfulBuild` : set a specific Pufferfish build to use. Example: selecting build 47 => 1.18.1, or build 50 => 1.18.2 etc
@@ -145,7 +163,9 @@ A [Purpur](https://purpurmc.org/) server, which is "a drop-in replacement for Pa
 
     -e TYPE=PURPUR
 
-> NOTE: the `VERSION` variable is used to lookup a build of Purpur to download
+!!! note
+
+    The `VERSION` variable is used to lookup a build of Purpur to download
 
 Extra variables:
 - `PURPUR_BUILD=LATEST` : set a specific Purpur build to use
@@ -159,7 +179,9 @@ A [Magma](https://magmafoundation.org/) server, which is a combination of Forge 
 
     -e TYPE=MAGMA
 
-> **NOTE** there are limited base versions supported, so you will also need to  set `VERSION`, such as "1.12.2", "1.16.5", etc.
+!!! note
+
+   There are limited base versions supported, so you will also need to  set `VERSION`, such as "1.12.2", "1.16.5", etc.
 
 
 ### Running a Mohist server
@@ -168,7 +190,9 @@ A [Mohist](https://github.com/MohistMC/Mohist) server can be used with
 
     -e TYPE=MOHIST
 
-> **NOTE** there are limited base versions supported, so you will also need to  set `VERSION`, such as "1.12.2"
+!!! note 
+
+   There are limited base versions supported, so you will also need to  set `VERSION`, such as "1.12.2"
 
 By default the latest build will be used; however, a specific build number can be selected by setting `MOHIST_BUILD`, such as
 
@@ -188,7 +212,9 @@ A [Loliserver](https://github.com/Loli-Server/LoliServer) type server can be use
 
     -e TYPE=LOLISERVER
 
-> **NOTE** Loliserver only provides a single release stream, so `VERSION` is ignored
+!!! note
+
+    Loliserver only provides a single release stream, so `VERSION` is ignored
 
 > **Disclaimer** The retrieval of the serverjar is not bulletproof. It can and probably will change in the future.
 
@@ -198,7 +224,9 @@ A [Loliserver](https://github.com/Loli-Server/LoliServer) type server can be use
 
     -e VERSION=b1.7.3 -e TYPE=CANYON
 
-> **NOTE** only `VERSION=b1.7.3` is supported. Since that version pre-dates the health check mechanism used by this image, that will need to be disabled by setting `DISABLE_HEALTHCHECK=true`.
+!!! note 
+
+    Only `VERSION=b1.7.3` is supported. Since that version pre-dates the health check mechanism used by this image, that will need to be disabled by setting `DISABLE_HEALTHCHECK=true`.
 
 By default, the latest build will be used; however, a specific build number can be selected by setting `CANYON_BUILD`, such as
 
@@ -213,14 +241,18 @@ If you want to run a specific version, you can add `-e SPONGEVERSION=1.11.2-6.1.
     
 Beware that current [Sponge](https://www.spongepowered.org) `STABLE` versions for Minecraft 1.12 require using [the Java 8 tag](#running-minecraft-server-on-different-java-version):
     
-    docker run -d -v /path/on/host:/data -e TYPE=SPONGEVANILLA \
-        -p 25565:25565 -e EULA=TRUE --name mc itzg/minecraft-server:java8-multiarch
+``` shell
+docker run -d -v /path/on/host:/data -e TYPE=SPONGEVANILLA \
+    -p 25565:25565 -e EULA=TRUE --name mc itzg/minecraft-server:java8-multiarch
+```
 
 You can also choose to use the `EXPERIMENTAL` branch.
 Just change it with `SPONGEBRANCH`, such as:
 
-    $ docker run -d -v /path/on/host:/data ... \
-        -e TYPE=SPONGEVANILLA -e SPONGEBRANCH=EXPERIMENTAL ...
+``` shell
+$ docker run -d -v /path/on/host:/data ... \
+    -e TYPE=SPONGEVANILLA -e SPONGEBRANCH=EXPERIMENTAL ...
+```
 
 ### Running a Limbo server
 
@@ -234,12 +266,11 @@ Configuration options with defaults:
 
 - `FORCE_REDOWNLOAD`=false
 - `LIMBO_SCHEMA_FILENAME`=default.schem
-- `LEVEL`="Default;${LIMBO_SCHEMA
+- `LEVEL`="Default;${LIMBO_SCHEMA_NAME}"
 
+!!! note
 
-NAME}"
-
-> NOTE: instead of using format codes in the MOTD, Limbo requires [JSON chat content](https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Java_Edition). If a plain string is provided, which is the default, then it gets converted into the required JSON structure. 
+    Instead of using format codes in the MOTD, Limbo requires [JSON chat content](https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Java_Edition). If a plain string is provided, which is the default, then it gets converted into the required JSON structure. 
 
 ### Running a Crucible server
 
@@ -253,12 +284,15 @@ Crucible is only available for 1.7.10, so be sure to set `VERSION=1.7.10`.
 
 ## Running a server with a Feed the Beast modpack
 
-> **NOTE** requires one of the Ubuntu with Hotspot images listed in [the Java versions section](#running-minecraft-server-on-different-java-version).
+!!! note 
+
+    Requires one of the Ubuntu with Hotspot images listed in [the Java versions section](#running-minecraft-server-on-different-java-version).
 
 [Feed the Beast application](https://www.feed-the-beast.com/) modpacks are supported by using `-e TYPE=FTBA` (**note** the "A" at the end of the type). This server type will automatically take care of downloading and installing the modpack and appropriate version of Forge, so the `VERSION` does not need to be specified.
 
 ### Environment Variables:
 - `FTB_MODPACK_ID`: **required**, the numerical ID of the modpack to install. The ID can be located by [finding the modpack](https://www.feed-the-beast.com/modpack) and locating the ID in this part of the URL:
+
   ```
   https://www.feed-the-beast.com/modpacks/23-ftb-infinity-evolved-17
                                           ^^
@@ -273,14 +307,16 @@ If a specific `FTB_MODPACK_VERSION_ID` was not specified, simply restart the con
 
 The following example runs the latest version of [FTB Presents Direwolf20 1.12](https://ftb.neptunepowered.org/pack/ftb-presents-direwolf20-1-12/):
 
-```
+``` shell
 docker run -d --name mc-ftb -e EULA=TRUE \
   -e TYPE=FTBA -e FTB_MODPACK_ID=31 \
   -p 25565:25565 \
   itzg/minecraft-server:java8-multiarch
 ```
 
-> Normally you will also add `-v` volume for `/data` since the mods and config are installed there along with world data.
+!!! note 
+
+    Normally you will also add `-v` volume for `/data` since the mods and config are installed there along with world data.
 
 ## Running a server with a CurseForge modpack
 
