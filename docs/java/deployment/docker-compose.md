@@ -3,7 +3,7 @@ every time you want to create new Minecraft server, you can now use
 [Docker Compose](https://docs.docker.com/compose/). Start with a
 `docker-compose.yml` file like the following:
 
-``` yml
+``` yaml
 version: "3"
 
 services:
