@@ -1,0 +1,1851 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Testing MKDocs.">
+      
+      
+        <meta name="author" content="DarthMinos#1161 (@camalot)">
+      
+      
+        <link rel="canonical" href="https://camalot.github.io/mkdocs-test/java/configuration/misc-options/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../autopause/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
+    
+    
+      
+        <title>Miscellaneous Options - MkDocs Test Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#replacing-variables-inside-configs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="MkDocs Test Documentation" class="md-header__button md-logo" aria-label="MkDocs Test Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MkDocs Test Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Miscellaneous Options
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/camalot/mkdocs-test/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link md-tabs__link--active">
+        Java Edition
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../bedrock/" class="md-tabs__link">
+      Bedrock
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../related-projects/" class="md-tabs__link">
+        Related Projects
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../contributing/development/" class="md-tabs__link">
+        Contributing
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MkDocs Test Documentation" class="md-nav__button md-logo" aria-label="MkDocs Test Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    MkDocs Test Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/camalot/mkdocs-test/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../..">Java Edition</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Java Edition" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Java Edition
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rcon/" class="md-nav__link">
+        Interacting With The Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-directory/" class="md-nav__link">
+        Data Directory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_4" tabindex="0" aria-expanded="false">
+          Versions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Versions" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Versions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../versions/minecraft/" class="md-nav__link">
+        Minecraft Versions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../versions/java/" class="md-nav__link">
+        Java Versions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../healthcheck/" class="md-nav__link">
+        Healthcheck
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_6" tabindex="0" aria-expanded="false">
+          Deployment Templates and Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Deployment Templates and Examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Deployment Templates and Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/helmcharts/" class="md-nav__link">
+        Helm Charts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/aws/" class="md-nav__link">
+        Amazon Web Services (AWS)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/docker-compose/" class="md-nav__link">
+        Docker Compose
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../server-types/" class="md-nav__link">
+        Server Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../packwiz/" class="md-nav__link">
+        Running server with a packwiz modpack
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mods-plugins/" class="md-nav__link">
+        Working with mods and plugins
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Server Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Miscellaneous Options
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Miscellaneous Options
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#replacing-variables-inside-configs" class="md-nav__link">
+    Replacing variables inside configs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#patching-existing-files" class="md-nav__link">
+    Patching existing files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-with-a-custom-server-jar" class="md-nav__link">
+    Running with a custom server JAR
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force-re-download-of-the-server-file" class="md-nav__link">
+    Force re-download of the server file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-as-alternate-usergroup-id" class="md-nav__link">
+    Running as alternate user/group ID
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-limit" class="md-nav__link">
+    Memory Limit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jvm-options" class="md-nav__link">
+    JVM Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-arguments" class="md-nav__link">
+    Extra Arguments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-and-color-console" class="md-nav__link">
+    Interactive and Color Console
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-shutdown-options" class="md-nav__link">
+    Server Shutdown Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openj9-specific-options" class="md-nav__link">
+    OpenJ9 Specific Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-rolling-logs" class="md-nav__link">
+    Enabling rolling logs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timezone-configuration" class="md-nav__link">
+    Timezone Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-remote-jmx-for-profiling" class="md-nav__link">
+    Enable Remote JMX for Profiling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-aikars-flags" class="md-nav__link">
+    Enable Aikar's Flags
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-proxy" class="md-nav__link">
+    HTTP Proxy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-noconsole-option" class="md-nav__link">
+    Using "noconsole" option
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explicitly-disable-gui" class="md-nav__link">
+    Explicitly disable GUI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stop-duration" class="md-nav__link">
+    Stop Duration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-only" class="md-nav__link">
+    Setup only
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-flare-flags" class="md-nav__link">
+    Enable Flare Flags
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-support-for-optimized-simd-operations" class="md-nav__link">
+    Enable support for optimized SIMD operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-timestamps-in-init-logs" class="md-nav__link">
+    Enable timestamps in init logs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto-execute-rcon-commands" class="md-nav__link">
+    Auto-execute RCON commands
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_13" type="checkbox" id="__nav_2_13" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../autopause/">AutoPause</a>
+          
+            <label for="__nav_2_13">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="AutoPause" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_13">
+          <span class="md-nav__icon md-icon"></span>
+          AutoPause
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../autopause/autostop/" class="md-nav__link">
+        AutoStop
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspberrypi/" class="md-nav__link">
+        Running on RaspberryPi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../log4j/" class="md-nav__link">
+        Mitigated Log4jShell Vulnerability
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment/" class="md-nav__link">
+        Environment Variables CheatSheet
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bedrock/" class="md-nav__link">
+        Bedrock
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          Related Projects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Related Projects" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Related Projects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../related-projects/" class="md-nav__link">
+        Related projects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/docker-minecraft-bedrock-server" class="md-nav__link">
+        itzg/minecraft-bedrock-server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/mc-router" class="md-nav__link">
+        mc-router
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/docker-bungeecord/" class="md-nav__link">
+        itzg/bungeecord
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/docker-mc-backup" class="md-nav__link">
+        itzg/mc-backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/rcon-cli" class="md-nav__link">
+        rcon-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/mc-monitor" class="md-nav__link">
+        mc-monitor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/mc-image-helper" class="md-nav__link">
+        mc-image-helper
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/docker-rcon-web-admin" class="md-nav__link">
+        itzg/rcon
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="false">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contributing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/development/" class="md-nav__link">
+        Development
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/building/" class="md-nav__link">
+        Building
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#replacing-variables-inside-configs" class="md-nav__link">
+    Replacing variables inside configs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#patching-existing-files" class="md-nav__link">
+    Patching existing files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-with-a-custom-server-jar" class="md-nav__link">
+    Running with a custom server JAR
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force-re-download-of-the-server-file" class="md-nav__link">
+    Force re-download of the server file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-as-alternate-usergroup-id" class="md-nav__link">
+    Running as alternate user/group ID
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-limit" class="md-nav__link">
+    Memory Limit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jvm-options" class="md-nav__link">
+    JVM Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-arguments" class="md-nav__link">
+    Extra Arguments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-and-color-console" class="md-nav__link">
+    Interactive and Color Console
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-shutdown-options" class="md-nav__link">
+    Server Shutdown Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openj9-specific-options" class="md-nav__link">
+    OpenJ9 Specific Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-rolling-logs" class="md-nav__link">
+    Enabling rolling logs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timezone-configuration" class="md-nav__link">
+    Timezone Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-remote-jmx-for-profiling" class="md-nav__link">
+    Enable Remote JMX for Profiling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-aikars-flags" class="md-nav__link">
+    Enable Aikar's Flags
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-proxy" class="md-nav__link">
+    HTTP Proxy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-noconsole-option" class="md-nav__link">
+    Using "noconsole" option
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explicitly-disable-gui" class="md-nav__link">
+    Explicitly disable GUI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stop-duration" class="md-nav__link">
+    Stop Duration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-only" class="md-nav__link">
+    Setup only
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-flare-flags" class="md-nav__link">
+    Enable Flare Flags
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-support-for-optimized-simd-operations" class="md-nav__link">
+    Enable support for optimized SIMD operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-timestamps-in-init-logs" class="md-nav__link">
+    Enable timestamps in init logs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto-execute-rcon-commands" class="md-nav__link">
+    Auto-execute RCON commands
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+  <h1>Miscellaneous Options</h1>
+
+<h3 id="replacing-variables-inside-configs">Replacing variables inside configs<a class="headerlink" href="#replacing-variables-inside-configs" title="Permanent link"></a></h3>
+<p>Sometimes you have mods or plugins that require configuration information that is only available at runtime.
+For example if you need to configure a plugin to connect to a database,
+you don't want to include this information in your Git repository or Docker image.
+Or maybe you have some runtime information like the server name that needs to be set
+in your config files after the container starts.</p>
+<p>For those cases there is the option to replace defined variables inside your configs
+with environment variables defined at container runtime.</p>
+<p>When the environment variable <code>REPLACE_ENV_IN_PLACE</code> is set to <code>true</code> (the default), the startup script will go through all files inside the container's <code>/data</code> path and replace variables that match the container's environment variables. Variables can instead (or in addition to) be replaced in files sync'ed from <code>/plugins</code>, <code>/mods</code>, and <code>/config</code> by setting <code>REPLACE_ENV_DURING_SYNC</code> to <code>true</code> (defaults to <code>false</code>). </p>
+<p>Variables that you want to replace need to be declared inside curly brackets and prefixed with a dollar sign, such as  <code>${CFG_YOUR_VARIABLE}</code>, which is same as many scripting languages.</p>
+<p>You can also change <code>REPLACE_ENV_VARIABLE_PREFIX</code>, which defaults to "CFG_", to limit which environment variables are allowed to be used. For example, with "CFG_" as the prefix, the variable <code>${CFG_DB_HOST}</code> would be subsituted, but not <code>${DB_HOST}</code>.</p>
+<p>If you want to use a file's content for value, such as when using secrets mounted as files, declare the placeholder named like normal in the file and declare an environment variable named the same but with the suffix <code>_FILE</code>. </p>
+<p>For example, a <code>my.cnf</code> file could contain:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[client]
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>password = ${CFG_DB_PASSWORD}
+</span></code></pre></div>
+<p>...a secret declared in the compose file with:
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">secrets</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">db_password</span><span class="p">:</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">external</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span></code></pre></div></p>
+<p>...and finally the environment variable would be named with a <code>_FILE</code> suffix and point to the mounted secret:
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">      </span><span class="nt">CFG_DB_PASSWORD_FILE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/run/secrets/db_password</span>
+</span></code></pre></div></p>
+<p>Variables will be replaced in files with the following extensions:
+<code>.yml</code>, <code>.yaml</code>, <code>.txt</code>, <code>.cfg</code>, <code>.conf</code>, <code>.properties</code>.</p>
+<p>Specific files can be excluded by listing their name (without path) in the variable <code>REPLACE_ENV_VARIABLES_EXCLUDES</code>.</p>
+<p>Paths can be excluded by listing them in the variable <code>REPLACE_ENV_VARIABLES_EXCLUDE_PATHS</code>. Path
+excludes are recursive. Here is an example:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>REPLACE_ENV_VARIABLES_EXCLUDE_PATHS=&quot;/data/plugins/Essentials/userdata /data/plugins/MyPlugin&quot;
+</span></code></pre></div></p>
+<p>Here is a full example where we want to replace values inside a <code>database.yml</code>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>---
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>database:
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  host: ${CFG_DB_HOST}
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  name: ${CFG_DB_NAME}
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>  password: ${CFG_DB_PASSWORD}
+</span></code></pre></div>
+<p>This is how your <code>docker-compose.yml</code> file could look like:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>version: &quot;3.8&quot;
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a># Other docker-compose examples in /examples
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>services:
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  minecraft:
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    image: itzg/minecraft-server
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    ports:
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>      - &quot;25565:25565&quot;
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    volumes:
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>      - &quot;mc:/data&quot;
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    environment:
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>      EULA: &quot;TRUE&quot;
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>      ENABLE_RCON: &quot;true&quot;
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>      RCON_PASSWORD: &quot;testing&quot;
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>      RCON_PORT: 28016
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>      # enable env variable replacement
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>      REPLACE_ENV_VARIABLES: &quot;TRUE&quot;
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>      # define an optional prefix for your env variables you want to replace
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>      ENV_VARIABLE_PREFIX: &quot;CFG_&quot;
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>      # and here are the actual variables
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>      CFG_DB_HOST: &quot;http://localhost:3306&quot;
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>      CFG_DB_NAME: &quot;minecraft&quot;
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>      CFG_DB_PASSWORD_FILE: &quot;/run/secrets/db_password&quot;
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>volumes:
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>  mc:
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>  rcon:
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>secrets:
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>  db_password:
+</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>    file: ./db_password
+</span></code></pre></div>
+<h3 id="patching-existing-files">Patching existing files<a class="headerlink" href="#patching-existing-files" title="Permanent link"></a></h3>
+<p>JSON path based patches can be applied to one or more existing files by setting the variable <code>PATCH_DEFINITIONS</code> to the path of a directory that contains one or more <a href="https://github.com/itzg/mc-image-helper#patchdefinition">patch definition json files</a> or a <a href="https://github.com/itzg/mc-image-helper#patchset">patch set json file</a>.</p>
+<p>Variable placeholders in the patch values can be restricted by setting <code>REPLACE_ENV_VARIABLE_PREFIX</code>, which defaults to "CFG_".</p>
+<p>The following example shows a patch-set file were various fields in the <code>paper.yaml</code> configuration file can be modified and added:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;patches&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">      </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/data/paper.yml&quot;</span><span class="p">,</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">      </span><span class="nt">&quot;ops&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">          </span><span class="nt">&quot;$set&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">            </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$.verbose&quot;</span><span class="p">,</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">          </span><span class="p">}</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">          </span><span class="nt">&quot;$set&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">            </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$.settings[&#39;velocity-support&#39;].enabled&quot;</span><span class="p">,</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${CFG_VELOCITY_ENABLED}&quot;</span><span class="p">,</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">            </span><span class="nt">&quot;value-type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bool&quot;</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">          </span><span class="p">}</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">          </span><span class="nt">&quot;$put&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">            </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$.settings&quot;</span><span class="p">,</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">            </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my-test-setting&quot;</span><span class="p">,</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;testing&quot;</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="w">          </span><span class="p">}</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="w">      </span><span class="p">]</span>
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="w">  </span><span class="p">]</span>
+</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="p">}</span>
+</span></code></pre></div>
+<blockquote>
+<p><strong>NOTES:</strong> Only JSON and Yaml files can be patched at this time. TOML support is planned to be added next. Removal of comments and other cosmetic changes will occur when patched files are processed.</p>
+</blockquote>
+<h3 id="running-with-a-custom-server-jar">Running with a custom server JAR<a class="headerlink" href="#running-with-a-custom-server-jar" title="Permanent link"></a></h3>
+<p>If you would like to run a custom server JAR, set <code>-e TYPE=CUSTOM</code> and pass the custom server
+JAR via <code>CUSTOM_SERVER</code>. It can either be a URL or a container path to an existing JAR file.</p>
+<p>If it is a URL, it will only be downloaded into the <code>/data</code> directory if it wasn't already. As
+such, if you need to upgrade or re-download the JAR, then you will need to stop the container,
+remove the file from the container's <code>/data</code> directory, and start again.</p>
+<h3 id="force-re-download-of-the-server-file">Force re-download of the server file<a class="headerlink" href="#force-re-download-of-the-server-file" title="Permanent link"></a></h3>
+<p>For VANILLA, FORGE, BUKKIT, SPIGOT, PAPER, CURSEFORGE, SPONGEVANILLA server types, set
+<code>$FORCE_REDOWNLOAD</code> to some value (e.g. 'true) to force a re-download of the server file for
+the particular server type. by adding a <code>-e FORCE_REDOWNLOAD=true</code> to your command-line.</p>
+<p>For example, with PaperSpigot, it would look something like this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker run -d -v /path/on/host:/data \
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    -e TYPE=PAPER -e FORCE_REDOWNLOAD=true \
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    -p 25565:25565 -e EULA=TRUE --name mc itzg/minecraft-server
+</span></code></pre></div>
+<h3 id="running-as-alternate-usergroup-id">Running as alternate user/group ID<a class="headerlink" href="#running-as-alternate-usergroup-id" title="Permanent link"></a></h3>
+<p>By default, the container will switch to user ID 1000 and group ID 1000;
+however, you can override those values by setting <code>UID</code> and/or <code>GID</code> as environmental entries, during the <code>docker run</code> command.</p>
+<div class="language-text highlight"><pre><span></span><code>-e UID=1234
+-e GID=1234
+</code></pre></div>
+<p>The container will also skip user switching if the <code>--user</code>/<code>-u</code> argument
+is passed to <code>docker run</code>.</p>
+<h3 id="memory-limit">Memory Limit<a class="headerlink" href="#memory-limit" title="Permanent link"></a></h3>
+<p>By default, the image declares an initial and maximum Java memory-heap limit of 1 GB. There are several ways to adjust the memory settings:</p>
+<ul>
+<li><code>MEMORY</code>: "1G" by default, can be used to adjust both initial (<code>Xms</code>) and max (<code>Xmx</code>) memory heap settings of the JVM</li>
+<li><code>INIT_MEMORY</code>: independently sets the initial heap size</li>
+<li><code>MAX_MEMORY</code>: independently sets the max heap size</li>
+</ul>
+<p>The values of all three are passed directly to the JVM and support format/units as <code>&lt;size&gt;[g|G|m|M|k|K]</code>. For example:</p>
+<div class="language-text highlight"><pre><span></span><code>-e MEMORY=2G
+</code></pre></div>
+<p>To let the JVM calculate the heap size from the container declared memory limit, unset <code>MEMORY</code> with an empty value, such as <code>-e MEMORY=""</code>. By default, the JVM will use 25% of the container memory limit as the heap limit; however, as an example the following would tell the JVM to use 75% of the container limit of 2GB of memory:</p>
+<div class="language-text highlight"><pre><span></span><code> -e MEMORY=&quot;&quot; -e JVM_XX_OPTS=&quot;-XX:MaxRAMPercentage=75&quot; -m 2000M
+</code></pre></div>
+<blockquote>
+<p>The settings above only set the Java <strong>heap</strong> limits. Memory resource requests and limits on the overall container should also account for non-heap memory usage. An extra 25% is <a href="https://dzone.com/articles/best-practices-java-memory-arguments-for-container">a general best practice</a>.</p>
+</blockquote>
+<h3 id="jvm-options">JVM Options<a class="headerlink" href="#jvm-options" title="Permanent link"></a></h3>
+<p>General JVM options can be passed to the Minecraft Server invocation by passing a <code>JVM_OPTS</code>
+environment variable. The JVM requires <code>-XX</code> options to precede <code>-X</code> options, so those can be declared in <code>JVM_XX_OPTS</code>. Both variables are space-delimited, raw JVM arguments.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker run ... -e JVM_OPTS=&quot;-someJVMOption someJVMOptionValue&quot; ...
+</span></code></pre></div>
+<p><strong>NOTE</strong> When declaring <code>JVM_OPTS</code> in a compose file's <code>environment</code> section with list syntax, <strong>do not</strong> include the quotes:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EULA=true</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JVM_OPTS=-someJVMOption someJVMOptionValue</span><span class="w"> </span>
+</span></code></pre></div>
+<p>Using object syntax is recommended and more intuitive:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">      </span><span class="nt">EULA</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">      </span><span class="nt">JVM_OPTS</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;-someJVMOption</span><span class="nv"> </span><span class="s">someJVMOptionValue&quot;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># or</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="c1">#     JVM_OPTS: -someJVMOption someJVMOptionValue</span>
+</span></code></pre></div>
+<p>As a shorthand for passing several system properties as <code>-D</code> arguments, you can instead pass a comma separated list of <code>name=value</code> or <code>name:value</code> pairs with <code>JVM_DD_OPTS</code>. (The colon syntax is provided for management platforms like Plesk that don't allow <code>=</code> inside a value.)</p>
+<p>For example, instead of passing</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w">  </span><span class="nt">JVM_OPTS</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-Dfml.queryResult=confirm -Dname=value</span>
+</span></code></pre></div>
+<p>you can use</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="w">  </span><span class="nt">JVM_DD_OPTS</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fml.queryResult=confirm,name=value</span>
+</span></code></pre></div>
+<h3 id="extra-arguments">Extra Arguments<a class="headerlink" href="#extra-arguments" title="Permanent link"></a></h3>
+<p>Arguments that would usually be passed to the jar file (those which are written after the filename) can be passed via the <code>EXTRA_ARGS</code> environment variable.</p>
+<p>See <a href="#custom-worlds-directory-path">Custom worlds directory path</a> for an example.</p>
+<h3 id="interactive-and-color-console">Interactive and Color Console<a class="headerlink" href="#interactive-and-color-console" title="Permanent link"></a></h3>
+<p>If you would like to <code>docker attach</code> to the Minecraft server console with color and interactive capabilities, then add</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>  -e EXEC_DIRECTLY=true
+</span></code></pre></div>
+<blockquote>
+<p><strong>NOTES</strong></p>
+<p>This feature doesn't work via rcon, so you will need to <code>docker attach</code> to the container. Use the sequence Ctrl-P, Ctrl-Q to detach. </p>
+<p>This will bypass graceful server shutdown handling when using <code>docker stop</code>, so be sure the server console's <code>stop</code> command.</p>
+<p>Make to enable stdin and tty with <code>-it</code> when using <code>docker run</code> or <code>stdin_open: true</code> and <code>tty: true</code> when using docker compose.</p>
+<p>This feature is incompatible with Autopause and cannot be set when <code>ENABLE_AUTOPAUSE=true</code>.</p>
+</blockquote>
+<h3 id="server-shutdown-options">Server Shutdown Options<a class="headerlink" href="#server-shutdown-options" title="Permanent link"></a></h3>
+<p>To allow time for players to finish what they're doing during a graceful server shutdown, set <code>STOP_SERVER_ANNOUNCE_DELAY</code> to a number of seconds to delay after an announcement is posted by the server.</p>
+<blockquote>
+<p><strong>NOTE</strong> be sure to adjust Docker's shutdown timeout accordingly, such as using <a href="https://docs.docker.com/compose/reference/down/">the -t option on docker-compose down</a>.</p>
+</blockquote>
+<h3 id="openj9-specific-options">OpenJ9 Specific Options<a class="headerlink" href="#openj9-specific-options" title="Permanent link"></a></h3>
+<p>The openj9 image tags include specific variables to simplify configuration:</p>
+<ul>
+<li><code>-e TUNE_VIRTUALIZED=TRUE</code> : enables the option to
+  <a href="https://www.eclipse.org/openj9/docs/xtunevirtualized/">optimize for virtualized environments</a></li>
+<li><code>-e TUNE_NURSERY_SIZES=TRUE</code> : configures nursery sizes where the initial size is 50%
+  of the <code>MAX_MEMORY</code> and the max size is 80%.</li>
+</ul>
+<h3 id="enabling-rolling-logs">Enabling rolling logs<a class="headerlink" href="#enabling-rolling-logs" title="Permanent link"></a></h3>
+<p>By default the vanilla log file will grow without limit. The logger can be reconfigured to use a rolling log files strategy by using:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>  -e ENABLE_ROLLING_LOGS=true
+</span></code></pre></div>
+<blockquote>
+<p><strong>NOTE</strong> this will interfere with interactive/color consoles <a href="#interactive-and-color-console">as described in the section above</a></p>
+</blockquote>
+<h3 id="timezone-configuration">Timezone Configuration<a class="headerlink" href="#timezone-configuration" title="Permanent link"></a></h3>
+<p>You can configure the timezone to match yours by setting the <code>TZ</code> environment variable:</p>
+<div class="language-text highlight"><pre><span></span><code>    -e TZ=Europe/London
+</code></pre></div>
+<p>such as:</p>
+<div class="language-text highlight"><pre><span></span><code>    docker run -d -it -e TZ=Europe/London -p 25565:25565 --name mc itzg/minecraft-server
+</code></pre></div>
+<p>Or mounting <code>/etc/timezone</code> as readonly (not supported on Windows):</p>
+<div class="language-text highlight"><pre><span></span><code>    -v /etc/timezone:/etc/timezone:ro
+</code></pre></div>
+<p>such as:</p>
+<div class="language-text highlight"><pre><span></span><code>    docker run -d -it -v /etc/timezone:/etc/timezone:ro -p 25565:25565 --name mc itzg/minecraft-server
+</code></pre></div>
+<h3 id="enable-remote-jmx-for-profiling">Enable Remote JMX for Profiling<a class="headerlink" href="#enable-remote-jmx-for-profiling" title="Permanent link"></a></h3>
+<p>To enable remote JMX, such as for profiling with VisualVM or JMC, add the environment variable <code>ENABLE_JMX=true</code>, set <code>JMX_HOST</code> to the IP/host running the Docker container, and add a port forwarding of TCP port 7091, such as:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>-e ENABLE_JMX=true -e JMX_HOST=$HOSTNAME -p 7091:7091
+</span></code></pre></div>
+<h3 id="enable-aikars-flags">Enable Aikar's Flags<a class="headerlink" href="#enable-aikars-flags" title="Permanent link"></a></h3>
+<p><a href="https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft/">Aikar has done some research</a> into finding the optimal JVM flags for GC tuning, which becomes more important as more users are connected concurrently. The set of flags documented there can be added using</p>
+<div class="language-text highlight"><pre><span></span><code>-e USE_AIKAR_FLAGS=true
+</code></pre></div>
+<p>When <code>MEMORY</code> is greater than or equal to 12G, then the Aikar flags will be adjusted according to the article.</p>
+<h3 id="http-proxy">HTTP Proxy<a class="headerlink" href="#http-proxy" title="Permanent link"></a></h3>
+<p>You may configure the use of an HTTP/HTTPS proxy by passing the proxy's URL via the <code>PROXY</code>
+environment variable. In <a href="https://github.com/itzg/docker-minecraft-server/blob/master/examples/docker-compose-proxied.yml">the example compose file</a> it references
+a companion squid proxy by setting the equivalent of</p>
+<div class="language-text highlight"><pre><span></span><code>-e PROXY=proxy:3128
+</code></pre></div>
+<h3 id="using-noconsole-option">Using "noconsole" option<a class="headerlink" href="#using-noconsole-option" title="Permanent link"></a></h3>
+<p>Some older versions (pre-1.14) of Spigot required <code>--noconsole</code> to be passed when detaching stdin, which can be done by setting <code>-e CONSOLE=FALSE</code>.</p>
+<h3 id="explicitly-disable-gui">Explicitly disable GUI<a class="headerlink" href="#explicitly-disable-gui" title="Permanent link"></a></h3>
+<p>Some older servers get confused and think that the GUI interface is enabled. You can explicitly
+disable that by passing <code>-e GUI=FALSE</code>.</p>
+<h3 id="stop-duration">Stop Duration<a class="headerlink" href="#stop-duration" title="Permanent link"></a></h3>
+<p>When the container is signalled to stop, the Minecraft process wrapper will attempt to send a "stop" command via RCON or console and waits for the process to gracefully finish. By default it waits 60 seconds, but that duration can be configured by setting the environment variable <code>STOP_DURATION</code> to the number of seconds.</p>
+<h3 id="setup-only">Setup only<a class="headerlink" href="#setup-only" title="Permanent link"></a></h3>
+<p>If you are using a host-attached data directory, then you can have the image setup the Minecraft server files and stop prior to launching the server process by setting <code>SETUP_ONLY</code> to <code>true</code>. </p>
+<h3 id="enable-flare-flags">Enable Flare Flags<a class="headerlink" href="#enable-flare-flags" title="Permanent link"></a></h3>
+<p>To enable the JVM flags required to fully support the <a href="https://blog.airplane.gg/flare">Flare profiling suite</a>, set the following variable:</p>
+<div class="language-text highlight"><pre><span></span><code>-e USE_FLARE_FLAGS=true
+</code></pre></div>
+<p>Flare is built-in to Pufferfish/Purpur, and is available in <a href="https://github.com/TECHNOVE/FlarePlugin">plugin form</a> for other server types.</p>
+<h3 id="enable-support-for-optimized-simd-operations">Enable support for optimized SIMD operations<a class="headerlink" href="#enable-support-for-optimized-simd-operations" title="Permanent link"></a></h3>
+<p>To enable support for optimized SIMD operations, the JVM flag can be set with the following variable:</p>
+<div class="language-text highlight"><pre><span></span><code>-e USE_SIMD_FLAGS=true
+</code></pre></div>
+<p>SIMD optimized operations are supported by Pufferfish and Purpur.</p>
+<h3 id="enable-timestamps-in-init-logs">Enable timestamps in init logs<a class="headerlink" href="#enable-timestamps-in-init-logs" title="Permanent link"></a></h3>
+<p>Before the container starts the Minecraft Server its output is prefixed with <code>[init]</code>, such as</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>[init] Starting the Minecraft server...
+</span></code></pre></div>
+<p>To also include the timestamp with each log, set <code>LOG_TIMESTAMP</code> to "true". The log output will then look like:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>[init] 2022-02-05 16:58:33+00:00 Starting the Minecraft server...
+</span></code></pre></div>
+<h3 id="auto-execute-rcon-commands">Auto-execute RCON commands<a class="headerlink" href="#auto-execute-rcon-commands" title="Permanent link"></a></h3>
+<p>RCON commands can be configured to execute when the server starts, a client connects, or a client disconnects.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When declaring several commands within a compose file environment variable, it's easiest to use YAML's <code>|-</code> <a href="https://yaml-multiline.info/">block style indicator</a>.</p>
+</div>
+<p><strong>On Server Start:</strong></p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="w">      </span><span class="nt">RCON_CMDS_STARTUP</span><span class="p">:</span><span class="w">  </span><span class="p p-Indicator">|-</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">        </span><span class="no">gamerule doFireTick false</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">        </span><span class="no">pregen start 200</span>
+</span></code></pre></div>
+<p><strong>On Client Connection:</strong></p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="w">      </span><span class="nt">RCON_CMDS_ON_CONNECT</span><span class="p">:</span><span class="w">  </span><span class="p p-Indicator">|-</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">        </span><span class="no">team join New @a[team=]</span>
+</span></code></pre></div>
+<p><strong>Note:</strong>
+* On client connect we only know there was a connection, and not who connected. RCON commands will need to be used for that.</p>
+<p><strong>On Client Disconnect:</strong></p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="w">      </span><span class="nt">RCON_CMDS_ON_DISCONNECT</span><span class="p">:</span><span class="w">  </span><span class="p p-Indicator">|-</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">        </span><span class="no">gamerule doFireTick true</span>
+</span></code></pre></div>
+<p><strong>On First Client Connect</strong></p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="w">      </span><span class="nt">RCON_CMDS_FIRST_CONNECT</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">        </span><span class="no">pregen stop</span>
+</span></code></pre></div>
+<p><strong>On Last Client Disconnect</strong></p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="w">      </span><span class="nt">RCON_CMDS_LAST_DISCONNECT</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">        </span><span class="no">kill @e[type=minecraft:boat]</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">        </span><span class="no">pregen start 200</span>
+</span></code></pre></div>
+<p><strong>Example of rules for new players</strong></p>
+<p>Uses team NEW and team OLD to track players on the server. So move player with no team to NEW, run a command, move them to team OLD.
+<a href="https://www.minecraftforum.net/forums/minecraft-java-edition/redstone-discussion-and/2213523-detect-players-first-join">Reference Article</a></p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="w">      </span><span class="nt">RCON_CMDS_STARTUP</span><span class="p">:</span><span class="w">  </span><span class="p p-Indicator">|-</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">        </span><span class="no">/pregen start 200</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">        </span><span class="no">/gamerule doFireTick false</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">        </span><span class="no">/team add New</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">        </span><span class="no">/team add Old</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">      </span><span class="nt">RCON_CMDS_ON_CONNECT</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">        </span><span class="no">/team join New @a[team=]</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">        </span><span class="no">/give @a[team=New] birch_boat</span>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">        </span><span class="no">/team join Old @a[team=New]</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="w">      </span><span class="nt">RCON_CMDS_FIRST_CONNECT</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span>
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="w">        </span><span class="no">/pregen stop</span>
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="w">      </span><span class="nt">RCON_CMDS_LAST_DISCONNECT</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span>
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="w">        </span><span class="no">/kill @e[type=minecraft:boat]</span>
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="w">        </span><span class="no">/pregen start 200</span>
+</span></code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2000 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Testing MKDocs.">
+      
+      
+        <meta name="author" content="DarthMinos#1161 (@camalot)">
+      
+      
+        <link rel="canonical" href="https://camalot.github.io/mkdocs-test/java/configuration/">
+      
+      
+        <link rel="prev" href="../mods-plugins/">
+      
+      
+        <link rel="next" href="misc-options/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
+    
+    
+      
+        <title>Server Configuration - MkDocs Test Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#message-of-the-day" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MkDocs Test Documentation" class="md-header__button md-logo" aria-label="MkDocs Test Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MkDocs Test Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Server Configuration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/camalot/mkdocs-test/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
+        Java Edition
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../bedrock/" class="md-tabs__link">
+      Bedrock
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../related-projects/" class="md-tabs__link">
+        Related Projects
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contributing/development/" class="md-tabs__link">
+        Contributing
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MkDocs Test Documentation" class="md-nav__button md-logo" aria-label="MkDocs Test Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    MkDocs Test Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/camalot/mkdocs-test/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../..">Java Edition</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Java Edition" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Java Edition
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rcon/" class="md-nav__link">
+        Interacting With The Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-directory/" class="md-nav__link">
+        Data Directory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_4" tabindex="0" aria-expanded="false">
+          Versions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Versions" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Versions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../versions/minecraft/" class="md-nav__link">
+        Minecraft Versions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../versions/java/" class="md-nav__link">
+        Java Versions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../healthcheck/" class="md-nav__link">
+        Healthcheck
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_6" tabindex="0" aria-expanded="false">
+          Deployment Templates and Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Deployment Templates and Examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Deployment Templates and Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/helmcharts/" class="md-nav__link">
+        Helm Charts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/aws/" class="md-nav__link">
+        Amazon Web Services (AWS)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/docker-compose/" class="md-nav__link">
+        Docker Compose
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server-types/" class="md-nav__link">
+        Server Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packwiz/" class="md-nav__link">
+        Running server with a packwiz modpack
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mods-plugins/" class="md-nav__link">
+        Working with mods and plugins
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Server Configuration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Server Configuration
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#message-of-the-day" class="md-nav__link">
+    Message of the Day
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#difficulty" class="md-nav__link">
+    Difficulty
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whitelist-players" class="md-nav__link">
+    Whitelist Players
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opadministrator-players" class="md-nav__link">
+    Op/Administrator Players
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabledisable-initial-selection-of-datapacks" class="md-nav__link">
+    Enable/disable initial selection of datapacks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-icon" class="md-nav__link">
+    Server icon
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rcon" class="md-nav__link">
+    RCON
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query" class="md-nav__link">
+    Query
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#max-players" class="md-nav__link">
+    Max players
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#max-world-size" class="md-nav__link">
+    Max world size
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allow-nether" class="md-nav__link">
+    Allow Nether
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#announce-player-achievements" class="md-nav__link">
+    Announce Player Achievements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-command-block" class="md-nav__link">
+    Enable Command Block
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force-gamemode" class="md-nav__link">
+    Force Gamemode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-structures" class="md-nav__link">
+    Generate Structures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardcore" class="md-nav__link">
+    Hardcore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snooper" class="md-nav__link">
+    Snooper
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#max-build-height" class="md-nav__link">
+    Max Build Height
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#max-tick-time" class="md-nav__link">
+    Max Tick Time
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spawn-animals" class="md-nav__link">
+    Spawn Animals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spawn-monsters" class="md-nav__link">
+    Spawn Monsters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spawn-npcs" class="md-nav__link">
+    Spawn NPCs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-spawn-protection" class="md-nav__link">
+    Set spawn protection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-distance" class="md-nav__link">
+    View Distance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-seed" class="md-nav__link">
+    Level Seed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-mode" class="md-nav__link">
+    Game Mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pvp-mode" class="md-nav__link">
+    PVP Mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-type-and-generator-settings" class="md-nav__link">
+    Level Type and Generator Settings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-server-resource-pack" class="md-nav__link">
+    Custom Server Resource Pack
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-world-save-name" class="md-nav__link">
+    Level / World Save Name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#online-mode" class="md-nav__link">
+    Online mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allow-flight" class="md-nav__link">
+    Allow flight
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-name" class="md-nav__link">
+    Server name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-port" class="md-nav__link">
+    Server port
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-server-property-mappings" class="md-nav__link">
+    Other server property mappings
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="misc-options/" class="md-nav__link">
+        Miscellaneous Options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_13" type="checkbox" id="__nav_2_13" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../autopause/">AutoPause</a>
+          
+            <label for="__nav_2_13">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="AutoPause" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_13">
+          <span class="md-nav__icon md-icon"></span>
+          AutoPause
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autopause/autostop/" class="md-nav__link">
+        AutoStop
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../raspberrypi/" class="md-nav__link">
+        Running on RaspberryPi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../log4j/" class="md-nav__link">
+        Mitigated Log4jShell Vulnerability
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../environment/" class="md-nav__link">
+        Environment Variables CheatSheet
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bedrock/" class="md-nav__link">
+        Bedrock
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          Related Projects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Related Projects" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Related Projects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../related-projects/" class="md-nav__link">
+        Related projects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/docker-minecraft-bedrock-server" class="md-nav__link">
+        itzg/minecraft-bedrock-server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/mc-router" class="md-nav__link">
+        mc-router
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/docker-bungeecord/" class="md-nav__link">
+        itzg/bungeecord
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/docker-mc-backup" class="md-nav__link">
+        itzg/mc-backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/rcon-cli" class="md-nav__link">
+        rcon-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/mc-monitor" class="md-nav__link">
+        mc-monitor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/mc-image-helper" class="md-nav__link">
+        mc-image-helper
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/docker-rcon-web-admin" class="md-nav__link">
+        itzg/rcon
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="false">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contributing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/development/" class="md-nav__link">
+        Development
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/building/" class="md-nav__link">
+        Building
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#message-of-the-day" class="md-nav__link">
+    Message of the Day
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#difficulty" class="md-nav__link">
+    Difficulty
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whitelist-players" class="md-nav__link">
+    Whitelist Players
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opadministrator-players" class="md-nav__link">
+    Op/Administrator Players
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabledisable-initial-selection-of-datapacks" class="md-nav__link">
+    Enable/disable initial selection of datapacks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-icon" class="md-nav__link">
+    Server icon
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rcon" class="md-nav__link">
+    RCON
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query" class="md-nav__link">
+    Query
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#max-players" class="md-nav__link">
+    Max players
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#max-world-size" class="md-nav__link">
+    Max world size
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allow-nether" class="md-nav__link">
+    Allow Nether
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#announce-player-achievements" class="md-nav__link">
+    Announce Player Achievements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-command-block" class="md-nav__link">
+    Enable Command Block
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force-gamemode" class="md-nav__link">
+    Force Gamemode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-structures" class="md-nav__link">
+    Generate Structures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardcore" class="md-nav__link">
+    Hardcore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snooper" class="md-nav__link">
+    Snooper
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#max-build-height" class="md-nav__link">
+    Max Build Height
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#max-tick-time" class="md-nav__link">
+    Max Tick Time
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spawn-animals" class="md-nav__link">
+    Spawn Animals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spawn-monsters" class="md-nav__link">
+    Spawn Monsters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spawn-npcs" class="md-nav__link">
+    Spawn NPCs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-spawn-protection" class="md-nav__link">
+    Set spawn protection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-distance" class="md-nav__link">
+    View Distance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-seed" class="md-nav__link">
+    Level Seed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-mode" class="md-nav__link">
+    Game Mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pvp-mode" class="md-nav__link">
+    PVP Mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-type-and-generator-settings" class="md-nav__link">
+    Level Type and Generator Settings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-server-resource-pack" class="md-nav__link">
+    Custom Server Resource Pack
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-world-save-name" class="md-nav__link">
+    Level / World Save Name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#online-mode" class="md-nav__link">
+    Online mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allow-flight" class="md-nav__link">
+    Allow flight
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-name" class="md-nav__link">
+    Server name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-port" class="md-nav__link">
+    Server port
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-server-property-mappings" class="md-nav__link">
+    Other server property mappings
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+  <h1>Server Configuration</h1>
+
+<p>By default, the server configuration will be created and set based on the following environment variables, but only the first time the server is started. If the <code>server.properties</code> file already exists, the values in them will not be changed.</p>
+<p>If you prefer to manually manage the <code>server.properties</code> file, set <code>OVERRIDE_SERVER_PROPERTIES</code> to "false". Similarly, you can entirely skip the startup script's creation of <code>server.properties</code> by setting <code>SKIP_SERVER_PROPERTIES</code> to "true".</p>
+<blockquote>
+<p>NOTE: to clear a server property, set the variable to an empty string, such as <code>-e RESOURCE_PACK=""</code>. A variables that maps to a server property that is unset, is ignored and the existing <code>server.property</code> is left unchanged. </p>
+</blockquote>
+<h3 id="message-of-the-day">Message of the Day<a class="headerlink" href="#message-of-the-day" title="Permanent link"></a></h3>
+<p>The message of the day, shown below each server entry in the client UI, can be changed with the <code>MOTD</code> environment variable, such as</p>
+<div class="language-text highlight"><pre><span></span><code>-e MOTD=&quot;My Server&quot;
+</code></pre></div>
+<p>If you leave it off, a default is computed from the server type and version, such as</p>
+<div class="language-text highlight"><pre><span></span><code>A Paper Minecraft Server powered by Docker
+</code></pre></div>
+<p>That way you can easily differentiate between several servers you may have started.</p>
+<p>The section symbol (§) and other unicode characters are automatically converted to allow <a href="https://minecraft.fandom.com/wiki/Formatting_codes">formatting codes</a> to be used consistently with all server versions. For example,</p>
+<div class="language-text highlight"><pre><span></span><code> -e MOTD=&quot;A §l§cMinecraft§r §nserver&quot;
+</code></pre></div>
+<p>renders</p>
+<p><img alt="" src="../../images/motd-example.png" /></p>
+<p>To produce a multi-line MOTD, you will need to double escape the newline such as</p>
+<div class="language-text highlight"><pre><span></span><code>-e MOTD=&quot;Line one\\nLine two&quot;
+</code></pre></div>
+<h3 id="difficulty">Difficulty<a class="headerlink" href="#difficulty" title="Permanent link"></a></h3>
+<p>The difficulty level (default: <code>easy</code>) can be set like:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker run -d -e DIFFICULTY=hard ...
+</span></code></pre></div>
+<p>Valid values are: <code>peaceful</code>, <code>easy</code>, <code>normal</code>, and <code>hard</code>, and an
+error message will be output in the logs if it's not one of these
+values.</p>
+<h3 id="whitelist-players">Whitelist Players<a class="headerlink" href="#whitelist-players" title="Permanent link"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is very important to set this with servers exposed to the internet where you want only limited players to join.</p>
+</div>
+<p>To whitelist players for your Minecraft server, you can:  </p>
+<ul>
+<li>Provide a list of usernames and/or UUIDs separated by commas via the <code>WHITELIST</code> environment variable<br />
+<code>docker run -d -e WHITELIST=user1,uuid2 ...</code></li>
+<li>Provide the url or path to a whitelist file via <code>WHITELIST_FILE</code> environment variable<br />
+<code>docker run -d -e WHITELIST_FILE=/extra/whitelist.json ...</code></li>
+</ul>
+<p>When either is set, <a href="https://minecraft.fandom.com/wiki/Server.properties#white-list">whitelisting of connecting users</a> is enabled . If managing the list manually, <code>ENABLE_WHITELIST</code> can be set to "true" to set the <code>white-list</code> property.</p>
+<p>If whitelist configuration already exists, <code>WHITELIST_FILE</code> will not be retrieved and any usernames in <code>WHITELIST</code> are <strong>added</strong> to the whitelist configuration. You can enforce regeneration of the whitelist on each server startup by setting <code>OVERRIDE_WHITELIST</code> to "true". This will delete the whitelist file before processing whitelist configuration.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can provide both <code>WHITELIST_FILE</code> and <code>WHITELIST</code>, which are processed in that order.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>UUIDs passed via <code>WHITELIST</code> need to be the dashed variant, otherwise it not be recognised and instead added as a username.</p>
+<p>If running Minecraft 1.7.5 or earlier, these variables will apply to <code>white-list.txt</code>, with 1.7.6 implementing support for <code>whitelist.json</code>. Make sure your <code>WHITELIST_FILE</code> is in the appropriate format.</p>
+</div>
+<p>To <a href="https://minecraft.fandom.com/wiki/Server.properties#enforce-whitelist">enforce the whitelist changes immediately</a> when whitelist commands are used , set <code>ENFORCE_WHITELIST</code> to "true".</p>
+<h3 id="opadministrator-players">Op/Administrator Players<a class="headerlink" href="#opadministrator-players" title="Permanent link"></a></h3>
+<p>Similar to the whitelist, to add users as operators (aka adminstrators) to your Minecraft server, you can:  </p>
+<ul>
+<li>Provide te url or path to an ops file via <code>OPS_FILE</code> environment variable<br />
+<code>docker run -d -e OPS_FILE=https://config.example.com/extra/ops.json ...</code></li>
+<li>Provide a list of usernames and/or UUIDs separated by commas via the <code>OPS</code> environment variable<br />
+<code>docker run -d -e OPS=user1,uuid2 ...</code></li>
+</ul>
+<p>If ops configuration already exists, <code>OPS_FILE</code> will not be retrieved and any usernames in <code>OPS</code> are <strong>added</strong> to the ops configuration. You can enforce regeneration of the ops configuration on each server startup by setting <code>OVERRIDE_OPS</code> to "true". This will delete the ops file before processing ops configuration.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Similar to whitelists, you can provide both <code>OPS_FILE</code> and <code>OPS</code>, and Minecraft 1.7.5 or earlier will use <code>ops.txt</code> rather than <code>ops.json</code>.</p>
+</div>
+<h3 id="enabledisable-initial-selection-of-datapacks">Enable/disable initial selection of datapacks<a class="headerlink" href="#enabledisable-initial-selection-of-datapacks" title="Permanent link"></a></h3>
+<p>New to <a href="https://www.minecraft.net/en-us/article/minecraft-snapshot-22w42a">22W42A</a>, datapacks with feature flags can be controlled before initial world creation by setting these to a comma separated list of packs:</p>
+<ul>
+<li><code>INITIAL_ENABLED_PACKS</code>
+  such as "update_1_20,bundle"</li>
+<li><code>INITIAL_DISABLED_PACKS</code></li>
+</ul>
+<h3 id="server-icon">Server icon<a class="headerlink" href="#server-icon" title="Permanent link"></a></h3>
+<p>A server icon can be configured using the <code>ICON</code> variable. The image will be automatically
+downloaded, scaled, and converted from any other image format:</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e ICON=http://..../some/image.png ...
+</code></pre></div>
+<p>The server icon which has been set doesn't get overridden by default. It can be changed and overridden by setting <code>OVERRIDE_ICON</code> to <code>TRUE</code>.</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e ICON=http://..../some/other/image.png -e OVERRIDE_ICON=TRUE...
+</code></pre></div>
+<h3 id="rcon">RCON<a class="headerlink" href="#rcon" title="Permanent link"></a></h3>
+<p>RCON is <strong>enabled by default</strong> to allow for graceful shut down the server and coordination of save state during backups. RCON can be disabled by setting <code>ENABLE_RCON</code> to "false".</p>
+<p>The default password is "minecraft" but <strong>change the password before deploying into production</strong> by setting <code>RCON_PASSWORD</code>.</p>
+<p><strong>DO NOT MAP THE RCON PORT EXTERNALLY</strong> unless you aware of all the consequences and have set a <strong>secure password</strong> with <code>RCON_PASSWORD</code>. </p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Mapping ports (<code>-p</code> command line or <code>ports</code> in compose) outside the container and docker networking needs to be a purposeful choice. Most production Docker deployments do not need any of the Minecraft ports mapped externally from the server itself.</p>
+</div>
+<p>By default, the server listens for RCON on port 25575 within the container. It can be changed with <code>RCON_PORT</code> but only do this if you have a very good reason. <strong>DO NOT change <code>rcon.port</code> via <code>server.properties</code></strong> or integrations will break.</p>
+<h3 id="query">Query<a class="headerlink" href="#query" title="Permanent link"></a></h3>
+<p>Enabling this will enable the gamespy query protocol.
+By default the query port will be <code>25565</code> (UDP) but can easily be changed with the <code>QUERY_PORT</code> variable.</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e ENABLE_QUERY=true
+</code></pre></div>
+<h3 id="max-players">Max players<a class="headerlink" href="#max-players" title="Permanent link"></a></h3>
+<p>By default max players is 20, you can increase this with the <code>MAX_PLAYERS</code> variable.</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e MAX_PLAYERS=50
+</code></pre></div>
+<h3 id="max-world-size">Max world size<a class="headerlink" href="#max-world-size" title="Permanent link"></a></h3>
+<p>This sets the maximum possible size in blocks, expressed as a radius, that the world border can obtain.</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e MAX_WORLD_SIZE=10000
+</code></pre></div>
+<h3 id="allow-nether">Allow Nether<a class="headerlink" href="#allow-nether" title="Permanent link"></a></h3>
+<p>Allows players to travel to the Nether.</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e ALLOW_NETHER=true
+</code></pre></div>
+<h3 id="announce-player-achievements">Announce Player Achievements<a class="headerlink" href="#announce-player-achievements" title="Permanent link"></a></h3>
+<p>Allows server to announce when a player gets an achievement.</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e ANNOUNCE_PLAYER_ACHIEVEMENTS=true
+</code></pre></div>
+<h3 id="enable-command-block">Enable Command Block<a class="headerlink" href="#enable-command-block" title="Permanent link"></a></h3>
+<p>Enables command blocks</p>
+<div class="language-text highlight"><pre><span></span><code> docker run -d -e ENABLE_COMMAND_BLOCK=true
+</code></pre></div>
+<h3 id="force-gamemode">Force Gamemode<a class="headerlink" href="#force-gamemode" title="Permanent link"></a></h3>
+<p>Force players to join in the default game mode.</p>
+<ul>
+<li>false - Players will join in the gamemode they left in.</li>
+<li>true - Players will always join in the default gamemode.</li>
+</ul>
+<p><code>docker run -d -e FORCE_GAMEMODE=false</code></p>
+<h3 id="generate-structures">Generate Structures<a class="headerlink" href="#generate-structures" title="Permanent link"></a></h3>
+<p>Defines whether structures (such as villages) will be generated.</p>
+<ul>
+<li>false - Structures will not be generated in new chunks.</li>
+<li>true - Structures will be generated in new chunks.</li>
+</ul>
+<p><code>docker run -d -e GENERATE_STRUCTURES=true</code></p>
+<h3 id="hardcore">Hardcore<a class="headerlink" href="#hardcore" title="Permanent link"></a></h3>
+<p>If set to true, players will be set to spectator mode if they die.</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e HARDCORE=false
+</code></pre></div>
+<h3 id="snooper">Snooper<a class="headerlink" href="#snooper" title="Permanent link"></a></h3>
+<p>If set to false, the server will not send data to snoop.minecraft.net server.</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e SNOOPER_ENABLED=false
+</code></pre></div>
+<h3 id="max-build-height">Max Build Height<a class="headerlink" href="#max-build-height" title="Permanent link"></a></h3>
+<p>The maximum height in which building is allowed.
+Terrain may still naturally generate above a low height limit.</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e MAX_BUILD_HEIGHT=256
+</code></pre></div>
+<h3 id="max-tick-time">Max Tick Time<a class="headerlink" href="#max-tick-time" title="Permanent link"></a></h3>
+<p>The maximum number of milliseconds a single tick may take before the server watchdog stops the server with the message, A single server tick took 60.00 seconds (should be max 0.05); Considering it to be crashed, server will forcibly shutdown. Once this criteria is met, it calls System.exit(1).
+Setting this to -1 will disable watchdog entirely</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e MAX_TICK_TIME=60000
+</code></pre></div>
+<h3 id="spawn-animals">Spawn Animals<a class="headerlink" href="#spawn-animals" title="Permanent link"></a></h3>
+<p>Determines if animals will be able to spawn.</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e SPAWN_ANIMALS=true
+</code></pre></div>
+<h3 id="spawn-monsters">Spawn Monsters<a class="headerlink" href="#spawn-monsters" title="Permanent link"></a></h3>
+<p>Determines if monsters will be spawned.</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e SPAWN_MONSTERS=true
+</code></pre></div>
+<h3 id="spawn-npcs">Spawn NPCs<a class="headerlink" href="#spawn-npcs" title="Permanent link"></a></h3>
+<p>Determines if villagers will be spawned.</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e SPAWN_NPCS=true
+</code></pre></div>
+<h3 id="set-spawn-protection">Set spawn protection<a class="headerlink" href="#set-spawn-protection" title="Permanent link"></a></h3>
+<p>Sets the area that non-ops can not edit (0 to disable)</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e SPAWN_PROTECTION=0
+</code></pre></div>
+<h3 id="view-distance">View Distance<a class="headerlink" href="#view-distance" title="Permanent link"></a></h3>
+<p>Sets the amount of world data the server sends the client, measured in chunks in each direction of the player (radius, not diameter).
+It determines the server-side viewing distance.</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e VIEW_DISTANCE=10
+</code></pre></div>
+<h3 id="level-seed">Level Seed<a class="headerlink" href="#level-seed" title="Permanent link"></a></h3>
+<p>If you want to create the Minecraft level with a specific seed, use <code>SEED</code>, such as</p>
+<div class="language-text highlight"><pre><span></span><code>-e SEED=1785852800490497919
+</code></pre></div>
+<p>If using a negative value for the seed, make sure to quote the value such as:</p>
+<div class="language-text highlight"><pre><span></span><code>-e SEED=&quot;-1785852800490497919&quot;
+</code></pre></div>
+<h3 id="game-mode">Game Mode<a class="headerlink" href="#game-mode" title="Permanent link"></a></h3>
+<p>By default, Minecraft servers are configured to run in Survival mode. You can
+change the mode using <code>MODE</code> where you can either provide the <a href="http://minecraft.gamepedia.com/Game_mode#Game_modes">standard
+numerical values</a> or the
+shortcut values:</p>
+<ul>
+<li>creative</li>
+<li>survival</li>
+<li>adventure</li>
+<li>spectator (only for Minecraft 1.8 or later)</li>
+</ul>
+<p>For example:</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e MODE=creative ...
+</code></pre></div>
+<h3 id="pvp-mode">PVP Mode<a class="headerlink" href="#pvp-mode" title="Permanent link"></a></h3>
+<p>By default, servers are created with player-vs-player (PVP) mode enabled. You can disable this with the <code>PVP</code>
+environment variable set to <code>false</code>, such as</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e PVP=false ...
+</code></pre></div>
+<h3 id="level-type-and-generator-settings">Level Type and Generator Settings<a class="headerlink" href="#level-type-and-generator-settings" title="Permanent link"></a></h3>
+<p>By default, a standard world is generated with hills, valleys, water, etc. A different level type can
+be configured by setting <code>LEVEL_TYPE</code> to <a href="https://minecraft.fandom.com/wiki/Server.properties#level-type">an expected type listed here</a>.</p>
+<p>For some of the level types, <code>GENERATOR_SETTINGS</code> can be used to further customize the world generation <a href="https://minecraft.fandom.com/wiki/Server.properties#generator-settings">as described here</a>.</p>
+<h3 id="custom-server-resource-pack">Custom Server Resource Pack<a class="headerlink" href="#custom-server-resource-pack" title="Permanent link"></a></h3>
+<p>You can set a link to a custom resource pack and set it's checksum using the <code>RESOURCE_PACK</code> and <code>RESOURCE_PACK_SHA1</code> options respectively, the default is blank:</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e &#39;RESOURCE_PACK=http://link.com/to/pack.zip?=1&#39; -e &#39;RESOURCE_PACK_SHA1=d5db29cd03a2ed055086cef9c31c252b4587d6d0&#39;
+</code></pre></div>
+<p>You can enforce the resource pack on clients by setting <code>RESOURCE_PACK_ENFORCE</code> to <code>TRUE</code> (default: <code>FALSE</code>).</p>
+<h3 id="level-world-save-name">Level / World Save Name<a class="headerlink" href="#level-world-save-name" title="Permanent link"></a></h3>
+<p>You can either switch between world saves or run multiple containers with different saves by using the <code>LEVEL</code> option,
+where the default is "world":</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e LEVEL=bonus ...
+</code></pre></div>
+<blockquote>
+<p><strong>NOTE:</strong> if running multiple containers be sure to either specify a different <code>-v</code> host directory for each
+<code>LEVEL</code> in use or don't use <code>-v</code> and the container's filesystem will keep things encapsulated.</p>
+<p><strong>INFO</strong> Refer to the <a href="#data-directory">data directory</a> section for a visual description of where the <code>$LEVEL</code> directory is situated.</p>
+</blockquote>
+<h3 id="online-mode">Online mode<a class="headerlink" href="#online-mode" title="Permanent link"></a></h3>
+<p>By default, server checks connecting players against Minecraft's account database. If you want to create an offline server or your server is not connected to the internet, you can disable the server to try connecting to minecraft.net to authenticate players with environment variable <code>ONLINE_MODE</code>, like this</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e ONLINE_MODE=FALSE ...
+</code></pre></div>
+<h3 id="allow-flight">Allow flight<a class="headerlink" href="#allow-flight" title="Permanent link"></a></h3>
+<p>Allows users to use flight on your server while in Survival mode, if they have a mod that provides flight installed.</p>
+<div class="language-text highlight"><pre><span></span><code>-e ALLOW_FLIGHT=TRUE|FALSE
+</code></pre></div>
+<h3 id="server-name">Server name<a class="headerlink" href="#server-name" title="Permanent link"></a></h3>
+<p>The server name (e.g. for bungeecord) can be set like:</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e SERVER_NAME=MyServer ...
+</code></pre></div>
+<h3 id="server-port">Server port<a class="headerlink" href="#server-port" title="Permanent link"></a></h3>
+<blockquote>
+<p><strong>WARNING:</strong> only change this value if you know what you're doing. It is only needed when using host networking and it is rare that host networking should be used. Use <code>-p</code> port mappings instead.</p>
+</blockquote>
+<p>If you must, the server port can be set like:</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e SERVER_PORT=25566 ...
+</code></pre></div>
+<p><strong>however</strong>, be sure to change your port mapping accordingly and be prepared for some features to break.</p>
+<h3 id="other-server-property-mappings">Other server property mappings<a class="headerlink" href="#other-server-property-mappings" title="Permanent link"></a></h3>
+<table>
+<thead>
+<tr>
+<th>Environment Variable</th>
+<th>Server Property</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PLAYER_IDLE_TIMEOUT</td>
+<td>player-idle-timeout</td>
+</tr>
+<tr>
+<td>BROADCAST_CONSOLE_TO_OPS</td>
+<td>broadcast-console-to-ops</td>
+</tr>
+<tr>
+<td>BROADCAST_RCON_TO_OPS</td>
+<td>broadcast-rcon-to-ops</td>
+</tr>
+<tr>
+<td>ENABLE_JMX</td>
+<td>enable-jmx-monitoring</td>
+</tr>
+<tr>
+<td>SYNC_CHUNK_WRITES</td>
+<td>sync-chunk-writes</td>
+</tr>
+<tr>
+<td>ENABLE_STATUS</td>
+<td>enable-status</td>
+</tr>
+<tr>
+<td>ENTITY_BROADCAST_RANGE_PERCENTAGE</td>
+<td>entity-broadcast-range-percentage</td>
+</tr>
+<tr>
+<td>FUNCTION_PERMISSION_LEVEL</td>
+<td>function-permission-level</td>
+</tr>
+<tr>
+<td>NETWORK_COMPRESSION_THRESHOLD</td>
+<td>network-compression-threshold</td>
+</tr>
+<tr>
+<td>OP_PERMISSION_LEVEL</td>
+<td>op-permission-level</td>
+</tr>
+<tr>
+<td>PREVENT_PROXY_CONNECTIONS</td>
+<td>prevent-proxy-connections</td>
+</tr>
+<tr>
+<td>USE_NATIVE_TRANSPORT</td>
+<td>use-native-transport</td>
+</tr>
+<tr>
+<td>ENFORCE_WHITELIST</td>
+<td>enforce-whitelist</td>
+</tr>
+<tr>
+<td>ENABLE_WHITELIST</td>
+<td>white-list and whitelist</td>
+</tr>
+<tr>
+<td>SIMULATION_DISTANCE</td>
+<td>simulation-distance</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+    
+  </body>
+</html>

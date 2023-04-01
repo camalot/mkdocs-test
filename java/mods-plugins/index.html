@@ -1,0 +1,1672 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Testing MKDocs.">
+      
+      
+        <meta name="author" content="DarthMinos#1161 (@camalot)">
+      
+      
+        <link rel="canonical" href="https://camalot.github.io/mkdocs-test/java/mods-plugins/">
+      
+      
+        <link rel="prev" href="../packwiz/">
+      
+      
+        <link rel="next" href="../configuration/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
+    
+    
+      
+        <title>Working with mods and plugins - MkDocs Test Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#optional-plugins-mods-and-config-attach-points" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MkDocs Test Documentation" class="md-header__button md-logo" aria-label="MkDocs Test Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MkDocs Test Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Working with mods and plugins
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/camalot/mkdocs-test/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
+        Java Edition
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../bedrock/" class="md-tabs__link">
+      Bedrock
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../related-projects/" class="md-tabs__link">
+        Related Projects
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contributing/development/" class="md-tabs__link">
+        Contributing
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MkDocs Test Documentation" class="md-nav__button md-logo" aria-label="MkDocs Test Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    MkDocs Test Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/camalot/mkdocs-test/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../..">Java Edition</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Java Edition" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Java Edition
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rcon/" class="md-nav__link">
+        Interacting With The Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-directory/" class="md-nav__link">
+        Data Directory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_4" tabindex="0" aria-expanded="false">
+          Versions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Versions" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Versions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../versions/minecraft/" class="md-nav__link">
+        Minecraft Versions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../versions/java/" class="md-nav__link">
+        Java Versions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../healthcheck/" class="md-nav__link">
+        Healthcheck
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_6" tabindex="0" aria-expanded="false">
+          Deployment Templates and Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Deployment Templates and Examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Deployment Templates and Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/helmcharts/" class="md-nav__link">
+        Helm Charts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/aws/" class="md-nav__link">
+        Amazon Web Services (AWS)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/docker-compose/" class="md-nav__link">
+        Docker Compose
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server-types/" class="md-nav__link">
+        Server Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packwiz/" class="md-nav__link">
+        Running server with a packwiz modpack
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Working with mods and plugins
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Working with mods and plugins
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#optional-plugins-mods-and-config-attach-points" class="md-nav__link">
+    Optional plugins, mods, and config attach points
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto-downloading-spigotmcbukkitpapermc-plugins-with-spiget" class="md-nav__link">
+    Auto-downloading SpigotMC/Bukkit/PaperMC plugins with Spiget
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto-download-mods-from-modrinth" class="md-nav__link">
+    Auto-download mods from Modrinth
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloadable-modplugin-pack-for-forge-fabric-and-bukkit-like-servers" class="md-nav__link">
+    Downloadable mod/plugin pack for Forge, Fabric, and Bukkit-like Servers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forgeapi-usage-to-use-non-version-specific-projects" class="md-nav__link">
+    ForgeAPI usage to use non-version specific projects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generic-pack-files" class="md-nav__link">
+    Generic pack files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modplugin-url-listing-file" class="md-nav__link">
+    Mod/Plugin URL Listing File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-old-modsplugins" class="md-nav__link">
+    Remove old mods/plugins
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-world-data" class="md-nav__link">
+    Working with world data
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with world data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#downloadable-world" class="md-nav__link">
+    Downloadable world
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloning-world-from-a-container-path" class="md-nav__link">
+    Cloning world from a container path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overwrite-world-on-start" class="md-nav__link">
+    Overwrite world on start
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-worlds-directory-path" class="md-nav__link">
+    Custom worlds directory path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datapacks" class="md-nav__link">
+    Datapacks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vanillatweaks" class="md-nav__link">
+    VanillaTweaks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        Server Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/misc-options/" class="md-nav__link">
+        Miscellaneous Options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_13" type="checkbox" id="__nav_2_13" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../autopause/">AutoPause</a>
+          
+            <label for="__nav_2_13">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="AutoPause" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_13">
+          <span class="md-nav__icon md-icon"></span>
+          AutoPause
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autopause/autostop/" class="md-nav__link">
+        AutoStop
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../raspberrypi/" class="md-nav__link">
+        Running on RaspberryPi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../log4j/" class="md-nav__link">
+        Mitigated Log4jShell Vulnerability
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../environment/" class="md-nav__link">
+        Environment Variables CheatSheet
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bedrock/" class="md-nav__link">
+        Bedrock
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          Related Projects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Related Projects" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Related Projects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../related-projects/" class="md-nav__link">
+        Related projects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/docker-minecraft-bedrock-server" class="md-nav__link">
+        itzg/minecraft-bedrock-server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/mc-router" class="md-nav__link">
+        mc-router
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/docker-bungeecord/" class="md-nav__link">
+        itzg/bungeecord
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/docker-mc-backup" class="md-nav__link">
+        itzg/mc-backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/rcon-cli" class="md-nav__link">
+        rcon-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/mc-monitor" class="md-nav__link">
+        mc-monitor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/mc-image-helper" class="md-nav__link">
+        mc-image-helper
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/itzg/docker-rcon-web-admin" class="md-nav__link">
+        itzg/rcon
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="false">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Contributing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/development/" class="md-nav__link">
+        Development
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/building/" class="md-nav__link">
+        Building
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#optional-plugins-mods-and-config-attach-points" class="md-nav__link">
+    Optional plugins, mods, and config attach points
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto-downloading-spigotmcbukkitpapermc-plugins-with-spiget" class="md-nav__link">
+    Auto-downloading SpigotMC/Bukkit/PaperMC plugins with Spiget
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto-download-mods-from-modrinth" class="md-nav__link">
+    Auto-download mods from Modrinth
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloadable-modplugin-pack-for-forge-fabric-and-bukkit-like-servers" class="md-nav__link">
+    Downloadable mod/plugin pack for Forge, Fabric, and Bukkit-like Servers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forgeapi-usage-to-use-non-version-specific-projects" class="md-nav__link">
+    ForgeAPI usage to use non-version specific projects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generic-pack-files" class="md-nav__link">
+    Generic pack files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modplugin-url-listing-file" class="md-nav__link">
+    Mod/Plugin URL Listing File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-old-modsplugins" class="md-nav__link">
+    Remove old mods/plugins
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-world-data" class="md-nav__link">
+    Working with world data
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with world data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#downloadable-world" class="md-nav__link">
+    Downloadable world
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloning-world-from-a-container-path" class="md-nav__link">
+    Cloning world from a container path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overwrite-world-on-start" class="md-nav__link">
+    Overwrite world on start
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-worlds-directory-path" class="md-nav__link">
+    Custom worlds directory path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datapacks" class="md-nav__link">
+    Datapacks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vanillatweaks" class="md-nav__link">
+    VanillaTweaks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+  <h1>Working with mods and plugins</h1>
+
+<h3 id="optional-plugins-mods-and-config-attach-points">Optional plugins, mods, and config attach points<a class="headerlink" href="#optional-plugins-mods-and-config-attach-points" title="Permanent link"></a></h3>
+<p>There are optional volume paths that can be attached to supply content to be copied into the data area:</p>
+<dl>
+<dt><code>/plugins</code></dt>
+<dd>contents are synchronized into <code>/data/plugins</code> for Bukkit related server types. The source can be changed by setting <code>COPY_PLUGINS_SRC</code>. The destination can be changed by setting <code>COPY_PLUGINS_DEST</code>. Set <code>SYNC_SKIP_NEWER_IN_DESTINATION=false</code> if you want files from <code>/plugins</code> to take precedence over newer files in <code>/data/plugins</code>.</dd>
+<dt><code>/mods</code></dt>
+<dd>contents are synchronized into <code>/data/mods</code> for Fabric and Forge related server types. The source can be changed by setting <code>COPY_MODS_SRC</code>. The destination can be changed by setting <code>COPY_MODS_DEST</code>.</dd>
+<dt><code>/config</code></dt>
+<dd>contents are synchronized into <code>/data/config</code> by default, but can be changed with <code>COPY_CONFIG_DEST</code>. The source can be changed by setting <code>COPY_CONFIG_SRC</code>. For example, <code>-v ./config:/config -e COPY_CONFIG_DEST=/data</code> will allow you to copy over files like <code>bukkit.yml</code> and so on directly into the server directory. Set <code>SYNC_SKIP_NEWER_IN_DESTINATION=false</code> if you want files from <code>/config</code> to take precedence over newer files in <code>/data/config</code>.</dd>
+</dl>
+<p>By default, the <a href="#replacing-variables-inside-configs">environment variable processing</a> is performed on synchronized files that match the expected suffixes in <code>REPLACE_ENV_SUFFIXES</code> (by default "yml,yaml,txt,cfg,conf,properties,hjson,json,tml,toml") and are not excluded by <code>REPLACE_ENV_VARIABLES_EXCLUDES</code> and <code>REPLACE_ENV_VARIABLES_EXCLUDE_PATHS</code>. This processing can be disabled by setting <code>REPLACE_ENV_DURING_SYNC</code> to <code>false</code>.</p>
+<p>If you want old mods/plugins to be removed before the content is brought over from those attach points, then add <code>-e REMOVE_OLD_MODS=TRUE</code>. You can fine tune the removal process by specifying the <code>REMOVE_OLD_MODS_INCLUDE</code> and <code>REMOVE_OLD_MODS_EXCLUDE</code> variables, which are comma separated lists of file glob patterns. If a directory is excluded, then it and all of its contents are excluded. By default, only jars are removed. </p>
+<p>You can also specify the <code>REMOVE_OLD_MODS_DEPTH</code> (default is 16) variable to only delete files up to a certain level.</p>
+<p>For example: <code>-e REMOVE_OLD_MODS=TRUE -e REMOVE_OLD_MODS_INCLUDE="*.jar" -e REMOVE_OLD_MODS_DEPTH=1</code> will remove all old jar files that are directly inside the <code>plugins/</code> or <code>mods/</code> directory.</p>
+<p>These paths work well if you want to have a common set of modules in a separate location, but still have multiple worlds with different server requirements in either persistent volumes or a downloadable archive.</p>
+<blockquote>
+<p>For more flexibility with mods/plugins preparation, you can declare directories to use in <a href="#downloadable-modplugin-pack-for-forge-fabric-and-bukkit-like-servers">the <code>MODS</code> variable</a></p>
+</blockquote>
+<h3 id="auto-downloading-spigotmcbukkitpapermc-plugins-with-spiget">Auto-downloading SpigotMC/Bukkit/PaperMC plugins with Spiget<a class="headerlink" href="#auto-downloading-spigotmcbukkitpapermc-plugins-with-spiget" title="Permanent link"></a></h3>
+<p>The <code>SPIGET_RESOURCES</code> variable can be set with a comma-separated list of SpigotMC resource IDs to automatically download <a href="https://www.spigotmc.org/resources/">SpigotMC resources/plugins</a> using <a href="https://spiget.org/">the spiget API</a>. Resources that are zip files will be expanded into the plugins directory and resources that are simply jar files will be moved there.</p>
+<blockquote>
+<p>NOTE: the variable is purposely spelled SPIG<strong>E</strong>T with an "E"</p>
+</blockquote>
+<p>The <strong>resource ID</strong> can be located from the numerical part of the URL after the shortname and a dot. For example, the ID is <strong>9089</strong> from</p>
+<div class="language-text highlight"><pre><span></span><code>https://www.spigotmc.org/resources/essentialsx.9089/
+                                               ====
+</code></pre></div>
+<p>For example, the following will auto-download the <a href="https://www.spigotmc.org/resources/essentialsx.9089/">EssentialsX</a> and <a href="https://www.spigotmc.org/resources/vault.34315/">Vault</a> plugins:</p>
+<div class="language-text highlight"><pre><span></span><code>-e SPIGET_RESOURCES=9089,34315
+</code></pre></div>
+<h3 id="auto-download-mods-from-modrinth">Auto-download mods from Modrinth<a class="headerlink" href="#auto-download-mods-from-modrinth" title="Permanent link"></a></h3>
+<p><a href="https://modrinth.com/">Modrinth</a> is an open source modding platform with a clean, easy to use website for finding <a href="https://modrinth.com/mods">Fabric and Forge mods</a>. At startup, the container will automatically locate and download the newest versions of mod files that correspond to the <code>TYPE</code> and <code>VERSION</code> in use. Older file versions downloaded previously will automatically be cleaned up.</p>
+<ul>
+<li><strong>MODRINTH_PROJECTS</strong> : comma separated list of project slugs (short name) or IDs. The project ID can be located in the "Technical information" section. The slug is the part of the page URL that follows <code>/mod/</code>:
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>  https://modrinth.com/mod/fabric-api
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>                           ----------
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>                            |
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>                            +-- project slug
+</span></code></pre></div>
+  Also, specific version/type can be declared using colon symbol and version id/type after the project slug. The version id can be found at 'Metadata' section. Valid version types are <code>release</code>, <code>beta</code>, <code>alpha</code>. For instance:
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>  -e MODRINTH_PROJECTS=fabric-api,fabric-api:PbVeub96,fabric-api:beta
+</span></code></pre></div></li>
+<li><strong>MODRINTH_DOWNLOAD_OPTIONAL_DEPENDENCIES</strong>=true : required dependencies of the project will <em>always</em> be downloaded and optional dependencies can also be downloaded by setting this to <code>true</code></li>
+<li><strong>MODRINTH_ALLOWED_VERSION_TYPE</strong>=release : the version type is used to determine the newest version to use from each project. The allowed values are <code>release</code>, <code>beta</code>, <code>alpha</code>.</li>
+</ul>
+<h3 id="downloadable-modplugin-pack-for-forge-fabric-and-bukkit-like-servers">Downloadable mod/plugin pack for Forge, Fabric, and Bukkit-like Servers<a class="headerlink" href="#downloadable-modplugin-pack-for-forge-fabric-and-bukkit-like-servers" title="Permanent link"></a></h3>
+<p>Like the <code>WORLD</code> option above, you can specify the URL or path of a "mod pack"
+to download and install into <code>mods</code> for Forge/Fabric or <code>plugins</code> for Bukkit/Spigot.
+To use this option pass the environment variable <code>MODPACK</code>, such as</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e MODPACK=http://www.example.com/mods/modpack.zip ...
+</code></pre></div>
+<p><strong>NOTE:</strong> The referenced URL must be a zip file with one or more jar files at the
+top level of the zip archive. Make sure the jars are compatible with the
+particular <code>TYPE</code> of server you are running.</p>
+<p>You may also download or copy over individual mods using the <code>MODS</code> environment variable. <code>MODS</code> contains a comma-separated list of
+- URL of a jar file
+- container path to a jar file
+- container path to a directory containing jar files</p>
+<p>docker run -d -e MODS=https://www.example.com/mods/mod1.jar,/plugins/common,/plugins/special/mod2.jar ...</p>
+<h3 id="forgeapi-usage-to-use-non-version-specific-projects">ForgeAPI usage to use non-version specific projects<a class="headerlink" href="#forgeapi-usage-to-use-non-version-specific-projects" title="Permanent link"></a></h3>
+<p><strong>NOTE:</strong> This potentially could lead to unexpected behavior if the Mod receives an update with unexpected behavior.</p>
+<p>This is more complicated because you will be pulling/using the latest mod for the release of your game. To get started make sure you have a <a href="https://docs.curseforge.com/#getting-started">CursedForge API Key</a>. Then use the environmental parameters in your docker build.</p>
+<p>Please be aware of the following when using these options for your mods:
+* Mod Release types: Release, Beta, and Alpha.
+* Mod dependencies: Required and Optional
+* Mod family: Fabric, Forge, and Bukkit.</p>
+<p>Parameters to use the ForgeAPI:</p>
+<ul>
+<li><code>MODS_FORGEAPI_KEY</code> - Required</li>
+<li><code>MODS_FORGEAPI_FILE</code> - Required or use MODS_FORGEAPI_PROJECTIDS (Overrides MODS_FORGEAPI_PROJECTIDS)</li>
+<li><code>MODS_FORGEAPI_PROJECTIDS</code> - Required or use MODS_FORGEAPI_FILE</li>
+<li><code>MODS_FORGEAPI_RELEASES</code> - Default is release, Options: [Release|Beta|Alpha]</li>
+<li><code>MODS_FORGEAPI_DOWNLOAD_DEPENDENCIES</code> - Default is False, attempts to download required mods (releaseType Release) defined in Forge.</li>
+<li><code>MODS_FORGEAPI_IGNORE_GAMETYPE</code> - Default is False, Allows for filtering mods on family type: FORGE, FABRIC, and BUKKIT. (Does not filter for Vanilla or custom)</li>
+<li><code>REMOVE_OLD_FORGEAPI_MODS</code> - Default is False</li>
+<li><code>REMOVE_OLD_DATAPACKS_DEPTH</code> - Default is 1</li>
+<li><code>REMOVE_OLD_DATAPACKS_INCLUDE</code> - Default is *.jar</li>
+</ul>
+<p>Example of expected forge api project ids, releases, and key: </p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">  </span><span class="nt">MODS_FORGEAPI_PROJECTIDS</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">306612,256717</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">MODS_FORGEAPI_RELEASES</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Release</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">MODS_FORGEAPI_KEY</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$WRX...</span>
+</span></code></pre></div>
+<p>Example of expected ForgeAPI file format.</p>
+<p><strong>Field Description</strong>: 
+* <code>name</code> is currently unused, but can be used to document each entry.
+* <code>projectId</code> id is the id found on the CurseForge website for a particular mod
+* <code>releaseType</code> Type corresponds to forge's R, B, A icon for each file. Default Release, options are (release|beta|alpha).
+* <code>fileName</code> is used for version pinning if latest file will not work for you.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">[</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fabric api&quot;</span><span class="p">,</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">      </span><span class="nt">&quot;projectId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;306612&quot;</span><span class="p">,</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="nt">&quot;releaseType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;release&quot;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="p">{</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fabric voice mod&quot;</span><span class="p">,</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">      </span><span class="nt">&quot;projectId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;416089&quot;</span><span class="p">,</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">      </span><span class="nt">&quot;releaseType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;beta&quot;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span><span class="p">{</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Biomes o plenty&quot;</span><span class="p">,</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">      </span><span class="nt">&quot;projectId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;220318&quot;</span><span class="p">,</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">      </span><span class="nt">&quot;fileName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BiomesOPlenty-1.18.1-15.0.0.100-universal.jar&quot;</span><span class="p">,</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">      </span><span class="nt">&quot;releaseType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;release&quot;</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="p">]</span>
+</span></code></pre></div>
+<h3 id="generic-pack-files">Generic pack files<a class="headerlink" href="#generic-pack-files" title="Permanent link"></a></h3>
+<p>To install all the server content (jars, mods, plugins, configs, etc.) from a zip or tgz file, then set <code>GENERIC_PACK</code> to the container path or URL of the archive file. This can also be used to apply a CurseForge modpack that is missing a server start script and/or Forge installer.</p>
+<p>If multiple generic packs need to be applied together, set <code>GENERIC_PACKS</code> instead, with a comma separated list of archive file paths and/or URLs to files.</p>
+<p>To avoid repetition, each entry will be prefixed by the value of <code>GENERIC_PACKS_PREFIX</code> and suffixed by the value of <code>GENERIC_PACKS_SUFFIX</code>, both of which are optional. For example, the following variables</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>GENERIC_PACKS=configs-v9.0.1,mods-v4.3.6
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>GENERIC_PACKS_PREFIX=https://cdn.example.org/
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>GENERIC_PACKS_SUFFIX=.zip
+</span></code></pre></div>
+<p>would expand to <code>https://cdn.example.org/configs-v9.0.1.zip,https://cdn.example.org/mods-v4.3.6.zip</code>.</p>
+<p>If applying large generic packs, the update can be time-consuming. To skip the update set <code>SKIP_GENERIC_PACK_UPDATE_CHECK</code> to "true". Conversely, the generic pack(s) can be forced to be applied by setting <code>FORCE_GENERIC_PACK_UPDATE</code> to "true".</p>
+<p>The most time consuming portion of the generic pack update is generating and comparing the SHA1 checksum. To skip the checksum generation, set <code>SKIP_GENERIC_PACK_CHECKSUM</code> to "true.</p>
+<h3 id="modplugin-url-listing-file">Mod/Plugin URL Listing File<a class="headerlink" href="#modplugin-url-listing-file" title="Permanent link"></a></h3>
+<p>As an alternative to <code>MODS</code>, the variable <code>MODS_FILE</code> can be set with the path to a text file listing a mod/plugin URL on each line. For example, the following</p>
+<div class="language-text highlight"><pre><span></span><code> -e MODS_FILE=/extras/mods.txt
+</code></pre></div>
+<p>would load from a file mounted into the container at <code>/extras/mods.txt</code>. That file might look like:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>https://edge.forgecdn.net/files/2965/233/Bookshelf-1.15.2-5.6.40.jar
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>https://edge.forgecdn.net/files/2926/27/ProgressiveBosses-2.1.5-mc1.15.2.jar
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a># This and next line are ignored
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>#https://edge.forgecdn.net/files/3248/905/goblintraders-1.3.1-1.15.2.jar
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>https://edge.forgecdn.net/files/3272/32/jei-1.15.2-6.0.3.16.jar
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>https://edge.forgecdn.net/files/2871/647/ToastControl-1.15.2-3.0.1.jar
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Blank lines and lines that start with a <code>#</code> will be ignored</p>
+<p><a href="https://github.com/itzg/docker-minecraft-server/blob/master/examples/docker-compose-mods-file.yml">This compose file</a> shows another example of using this feature.</p>
+<p>It is recommended to combine this option with <code>REMOVE_OLD_MODS=TRUE</code> to ensure the mods/plugins remain consistent with the file's listing.</p>
+</div>
+<h3 id="remove-old-modsplugins">Remove old mods/plugins<a class="headerlink" href="#remove-old-modsplugins" title="Permanent link"></a></h3>
+<p>When the option above is specified (<code>MODPACK</code>) you can also instruct script to
+delete old mods/plugins prior to installing new ones. This behaviour is desirable
+in case you want to upgrade mods/plugins from downloaded zip file.
+To use this option pass the environment variable <code>REMOVE_OLD_MODS=TRUE</code>, such as</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e REMOVE_OLD_MODS=TRUE -e MODPACK=http://www.example.com/mods/modpack.zip ...
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>All content of the <code>mods</code> or <code>plugins</code> directory will be deleted</p>
+</div>
+<p>before unpacking new content from the MODPACK or MODS.</p>
+<h2 id="working-with-world-data">Working with world data<a class="headerlink" href="#working-with-world-data" title="Permanent link"></a></h2>
+<h3 id="downloadable-world">Downloadable world<a class="headerlink" href="#downloadable-world" title="Permanent link"></a></h3>
+<p>Instead of mounting the <code>/data</code> volume, you can instead specify the URL of a ZIP or compressed TAR file containing an archived world. It will be searched for a file <code>level.dat</code> and the containing subdirectory moved to the directory named by <code>$LEVEL</code>. This means that most of the archived Minecraft worlds downloadable from the Internet will already be in the correct format.</p>
+<div class="language-text highlight"><pre><span></span><code>docker run -d -e WORLD=http://www.example.com/worlds/MySave.zip ...
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This URL must be accessible from inside the container. Therefore, you should use an IP address or a globally resolvable FQDN, or else the name of a linked container.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the archive contains more than one <code>level.dat</code>, then the one to select can be picked with <code>WORLD_INDEX</code>, which defaults to 1.</p>
+</div>
+<h3 id="cloning-world-from-a-container-path">Cloning world from a container path<a class="headerlink" href="#cloning-world-from-a-container-path" title="Permanent link"></a></h3>
+<p>The <code>WORLD</code> option can also be used to reference a directory, zip file, or compressed tar file that will be used as a source to clone or extract the world directory.</p>
+<p>For example, the following would initially clone the world's content from <code>/worlds/basic</code>. Also notice in the example that you should use a read-only volume attachment to ensure the clone source remains pristine.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker run ... -v $HOME/worlds:/worlds:ro -e WORLD=/worlds/basic
+</span></code></pre></div>
+<p>The following diagram shows how this option can be used in a compose deployment with a relative directory:</p>
+<p><img alt="" src="../../images/world-copy-compose-project.drawio.png" /></p>
+<h3 id="overwrite-world-on-start">Overwrite world on start<a class="headerlink" href="#overwrite-world-on-start" title="Permanent link"></a></h3>
+<p>The world will only be downloaded or copied if it doesn't exist already. Set <code>FORCE_WORLD_COPY=TRUE</code> to force overwrite the world on every server start.</p>
+<h3 id="custom-worlds-directory-path">Custom worlds directory path<a class="headerlink" href="#custom-worlds-directory-path" title="Permanent link"></a></h3>
+<p>To set a custom worlds directory for the Multiverse plugin on a baremetal server, you'd pass the <code>--world-dir</code> argument after the jar file.
+In order to accomplish the same in a containerized server, set the <code>EXTRA_ARGS</code> environment variable in your command line or docker compose yaml to the same argument string. For example:</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker run -d -e EXTRA_ARGS=&#39;--world-dir ./worlds/&#39;
+</span></code></pre></div>
+<code>--world-container</code>, <code>-W</code>, and <code>--universe</code> are aliases to <code>--world-dir</code> and can also be used.</p>
+<h3 id="datapacks">Datapacks<a class="headerlink" href="#datapacks" title="Permanent link"></a></h3>
+<p>Datapacks can be installed in a similar manner to mods/plugins. There are many environment variables which function in the same way they do for <a href="#working-with-mods-and-plugins">mods</a>: </p>
+<ul>
+<li><code>DATAPACKS</code>: comma-separated list of zip file URL, zip file in container, or directory in container</li>
+<li><code>DATAPACKS_FILE</code>: a text file within the container where each line is a zip file URL, zip file in container, or directory in container</li>
+<li><code>REMOVE_OLD_DATAPACKS</code>: if "true" the datapacks directory is removed of everything matching <code>REMOVE_OLD_DATAPACKS_INCLUDE</code>, but excluding <code>REMOVE_OLD_DATAPACKS_EXCLUDE</code> no deeper than <code>REMOVE_OLD_DATAPACKS_DEPTH</code></li>
+<li><code>REMOVE_OLD_DATAPACKS_DEPTH</code>: default is 16</li>
+<li><code>REMOVE_OLD_DATAPACKS_INCLUDE</code>: default is <code>*.zip</code></li>
+<li><code>REMOVE_OLD_DATAPACKS_EXCLUDE</code>: default is empty</li>
+</ul>
+<p>Datapacks will be placed in <code>/data/$LEVEL/datapacks</code></p>
+<h3 id="vanillatweaks">VanillaTweaks<a class="headerlink" href="#vanillatweaks" title="Permanent link"></a></h3>
+<p><a href="https://vanillatweaks.net/">VanillaTweaks</a> datapacks, crafting tweaks, and resource packs can be installed with a share code from the website <strong>OR</strong> a json file to specify packs to download and install. Datapacks and crafting tweaks will be installed into the current world directory specified by <code>$LEVEL</code>. As new versions of the packs are retrieved the previous versions will automatically be cleaned up.</p>
+<p>The share code is the part following the hash sign, as shown here:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>https://vanillatweaks.net/share/#MGr52E
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>                                 ------
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>                                  |
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>                                  +- share code MGr52E
+</span></code></pre></div>
+<p>Accepted Parameters:</p>
+<ul>
+<li><code>VANILLATWEAKS_FILE</code>: comma separated list of JSON VanillaTweak pack files accessible within the container</li>
+<li><code>VANILLATWEAKS_SHARECODE</code>: comma separated list of share codes</li>
+</ul>
+<p>Example of expected VanillaTweaks share codes: </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ResourcePacks, DataPacks, and CraftingTweaks all have separate sharecodes</p>
+</div>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">VANILLATWEAKS_SHARECODE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MGr52E,tF1zL2,LnEDwT</span>
+</span></code></pre></div>
+<p>Example of expected VanillaTweaks files:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">VANILLATWEAKS_FILE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/config/vt-datapacks.json,/config/vt-craftingtweaks.json,/config/vt-resourcepacks.json</span>
+</span></code></pre></div>
+<div class="language-json highlight"><span class="filename">DataPacks json</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;datapacks&quot;</span><span class="p">,</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.18&quot;</span><span class="p">,</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="nt">&quot;packs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="nt">&quot;survival&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">      </span><span class="s2">&quot;graves&quot;</span><span class="p">,</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">      </span><span class="s2">&quot;multiplayer sleep&quot;</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="p">],</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;armored elytra&quot;</span><span class="p">]</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-json highlight"><span class="filename">ResourcePacks json</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;resourcepacks&quot;</span><span class="p">,</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.18&quot;</span><span class="p">,</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="nt">&quot;packs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">        </span><span class="nt">&quot;aesthetic&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;CherryPicking&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;BlackNetherBricks&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;AlternateBlockDestruction&quot;</span><span class="p">]</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-json highlight"><span class="filename">CraftingTweaks Json</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">{</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;craftingtweaks&quot;</span><span class="p">,</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.18&quot;</span><span class="p">,</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="nt">&quot;packs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">        </span><span class="nt">&quot;quality of life&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">            </span><span class="s2">&quot;dropper to dispenser&quot;</span><span class="p">,</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">            </span><span class="s2">&quot;double slabs&quot;</span><span class="p">,</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">            </span><span class="s2">&quot;back to blocks&quot;</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">        </span><span class="p">]</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="p">}</span>
+</span></code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+    
+  </body>
+</html>
