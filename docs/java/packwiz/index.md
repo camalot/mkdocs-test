@@ -2,7 +2,7 @@
 
 To configure server mods using a packwiz modpack, set the `PACKWIZ_URL` environment variable to the location of your `pack.toml` modpack definition:
 
-```shell
+```
 docker run -d -v /path/on/host:/data -e TYPE=FABRIC \
     -e "PACKWIZ_URL=https://example.com/modpack/pack.toml" \
     itzg/minecraft-server
@@ -10,4 +10,6 @@ docker run -d -v /path/on/host:/data -e TYPE=FABRIC \
 
 packwiz modpack defitions are processed before other mod definitions (`MODPACK`, `MODS`, etc.) to allow for additional processing/overrides you may want to perform (in case of mods not available via Modrinth/CurseForge, or you do not maintain the pack).
 
-> packwiz is pre-configured to only download server mods. If client-side mods are downloaded and cause issues, check your pack.toml configuration, and make sure any client-only mods are not set to `"both"`, but rather `"client"` for the side configuration item.
+!!! note 
+
+    packwiz is pre-configured to only download server mods. If client-side mods are downloaded and cause issues, check your pack.toml configuration, and make sure any client-only mods are not set to `"both"`, but rather `"client"` for the side configuration item.
