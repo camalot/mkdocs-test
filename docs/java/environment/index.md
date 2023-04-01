@@ -2,6 +2,7 @@
 ## Environment Variables
 
 
+### **OS OPTIONS**
 <table>
     <thead>
         <tr>
@@ -12,9 +13,6 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th colspan="4"><h4><strong>OS OPTIONS</strong></h4></th>
-        </tr>
         <tr>
             <td><code>UID</code></td>
             <td>The linux user id to run as</td>
@@ -27,9 +25,21 @@
             <td><code>1000</code></td>
             <td>⬜️</td>
         </tr>
+    </tbody>
+</table>
+
+### **SERVER**
+
+<table>
+    <thead>
         <tr>
-            <th colspan="4"><h4><strong>SERVER</strong></h4></th>
+            <th>NAME</th>
+            <th>DESCRIPTION</th>
+            <th>DEFAULT</th>
+            <th>REQUIRED</th>
         </tr>
+    </thead>
+    <tbody>
         <tr>
             <td><code>TYPE</code></td>
             <td>The server <a href="java/server-types/">type</a></td>
@@ -205,9 +215,21 @@
             <td><code></code></td>
             <td>⬜️</td>
         </tr>
+    </tbody>
+</table>
+
+### **CUSTOM RESOURCE PACK**
+
+<table>
+    <thead>
         <tr>
-            <th colspan="4"><h4><strong>CUSTOM RESOURCE PACK</strong></h4></th>
+            <th>NAME</th>
+            <th>DESCRIPTION</th>
+            <th>DEFAULT</th>
+            <th>REQUIRED</th>
         </tr>
+    </thead>
+    <tbody>
         <tr>
             <td><code>RESOURCE_PACK</code></td>
             <td>A link to a custom resource pack</td>
@@ -226,9 +248,21 @@
             <td><code>FALSE</code></td>
             <td>⬜️</td>
         </tr>
+    </tbody>
+</table>
+
+### **WHITELIST**
+
+<table>
+    <thead>
         <tr>
-            <th colspan="4"><h4><strong>WHITELIST</strong></h4></th>
+            <th>NAME</th>
+            <th>DESCRIPTION</th>
+            <th>DEFAULT</th>
+            <th>REQUIRED</th>
         </tr>
+    </thead>
+    <tbody>
         <tr>
             <td><code>ENABLE_WHITELIST</code></td>
             <td>Enable the whitelist to manually manage the whitelist</td>
@@ -253,9 +287,21 @@
             <td><code>false</code></td>
             <td>⬜️</td>
         </tr>
+    </tbody>
+</table>
+
+### **RCON**
+
+<table>
+    <thead>
         <tr>
-            <th colspan="4"><h4><strong>RCON</strong></h4></th>
+            <th>NAME</th>
+            <th>DESCRIPTION</th>
+            <th>DEFAULT</th>
+            <th>REQUIRED</th>
         </tr>
+    </thead>
+    <tbody>
         <tr>
             <td><code>ENABLE_RCON</code></td>
             <td>Should RCON be enabled</td>
