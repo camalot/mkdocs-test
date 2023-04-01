@@ -12,7 +12,7 @@ Enable [Forge server](http://www.minecraftforge.net/) mode by adding a `-e TYPE=
 
 The overall version is specified by `VERSION`, [as described in the section above](#versions) and will run the recommended Forge version by default. You can also choose to run a specific Forge version with `FORGE_VERSION`, such as `-e FORGE_VERSION=14.23.5.2854`.
 
-``` shell
+```
 docker run -d -v /path/on/host:/data \
     -e TYPE=FORGE \
     -e VERSION=1.12.2 -e FORGE_VERSION=14.23.5.2854 \
@@ -22,7 +22,7 @@ docker run -d -v /path/on/host:/data \
 To use a pre-downloaded Forge installer, place it in the attached `/data` directory and
 specify the name of the installer file with `FORGE_INSTALLER`, such as:
 
-``` shell
+```
 docker run -d -v /path/on/host:/data ... \
     -e FORGE_INSTALLER=forge-1.11.2-13.20.0.2228-installer.jar ...
 ```
@@ -30,7 +30,7 @@ docker run -d -v /path/on/host:/data ... \
 To download a Forge installer from a custom location, such as your own file repository, specify
 the URL with `FORGE_INSTALLER_URL`, such as:
 
-``` shell
+```
 docker run -d -v /path/on/host:/data ... \
     -e FORGE_INSTALLER_URL=http://HOST/forge-1.11.2-13.20.0.2228-installer.jar ...
 ```
@@ -45,7 +45,7 @@ In both of the cases above, there is no need for the `VERSION` or `FORGEVERSION`
 
 Enable [Fabric server](https://fabricmc.net/) mode by adding a `-e TYPE=FABRIC` to your command-line.
 
-``` shell
+```
 docker run -d -v /path/on/host:/data \
     -e TYPE=FABRIC \
     -p 25565:25565 -e EULA=TRUE --name mc itzg/minecraft-server
@@ -55,7 +55,7 @@ By default, the container will install the latest [fabric server launcher](https
 
 A specific loader or launcher version other than the latest can be requested using `FABRIC_LOADER_VERSION` and `FABRIC_LAUNCHER_VERSION` respectively, such as:
 
-``` shell
+```
 docker run -d -v /path/on/host:/data ... \
     -e TYPE=FABRIC \
     -e FABRIC_LAUNCHER_VERSION=0.10.2 \
@@ -75,7 +75,7 @@ See the [Working with mods and plugins](#working-with-mods-and-plugins) section 
 
 Enable [Quilt server](https://quiltmc.org/) mode by adding a `-e TYPE=QUILT` to your command-line.
 
-``` shell
+```
 docker run -d -v /path/on/host:/data \
     -e TYPE=QUILT \
     -p 25565:25565 -e EULA=TRUE --name mc itzg/minecraft-server
@@ -85,7 +85,7 @@ By default, the container will install the latest [quilt server launcher](https:
 
 A specific loader or installer version other than the latest can be requested using `QUILT_LOADER_VERSION` and `QUILT_INSTALLER_VERSION` respectively, such as:
 
-``` shell
+```
 docker run -d -v /path/on/host:/data ... \
     -e TYPE=QUILT \
     -e QUILT_LOADER_VERSION=0.16.0 \
@@ -105,7 +105,7 @@ See the [Working with mods and plugins](#working-with-mods-and-plugins) section 
 
 Enable Bukkit/Spigot server mode by adding a `-e TYPE=BUKKIT` or `-e TYPE=SPIGOT` to your command-line.
 
-``` shell
+```
 docker run -d -v /path/on/host:/data \
     -e TYPE=SPIGOT \
     -p 25565:25565 -e EULA=TRUE --name mc itzg/minecraft-server
@@ -124,7 +124,9 @@ Plugins can either be managed within the `plugins` subdirectory of the [data dir
 
 [You can also auto-download plugins using `SPIGET_RESOURCES`.](#auto-downloading-spigotmcbukkitpapermc-plugins-with-spiget)
 
-> NOTE some of the `VERSION` values are not as intuitive as you would think, so make sure to click into the version entry to find the **exact** version needed for the download. For example, "1.8" is not sufficient since their download naming expects `1.8-R0.1-SNAPSHOT-latest` exactly.
+!!! note 
+
+    Some of the `VERSION` values are not as intuitive as you would think, so make sure to click into the version entry to find the **exact** version needed for the download. For example, "1.8" is not sufficient since their download naming expects `1.8-R0.1-SNAPSHOT-latest` exactly.
 
 ### Running a Paper server
 
