@@ -1,7 +1,4 @@
 
-## Environment Variables
-
-
 ### **OS OPTIONS**
 <table>
     <thead>
@@ -23,6 +20,89 @@
             <td><code>GID</code></td>
             <td>The linux group id to run as</td>
             <td><code>1000</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>MEMORY</code></td>
+            <td>The image declares an initial and maximum Java memory-heap limit of 1 GB.</td>
+            <td><code>1G</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>INIT_MEMORY</code></td>
+            <td>Independently sets the initial heap size</td>
+            <td><code>1G</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>MAX_MEMORY</code></td>
+            <td>independently sets the max heap size</td>
+            <td><code>1G</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>TZ</code></td>
+            <td>You can configure the timezone to match yours by setting the TZ environment variable.  
+
+alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
+
+/etc/timezone:/etc/timezone:ro</code>
+            </td>
+            <td><code>1G</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>ENABLE_ROLLING_LOGS</code></td>
+            <td>By default the vanilla log file will grow without limit. The logger can be reconfigured to use a rolling log files strategy by setting this to <code>true</code></td>
+            <td><code>false</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>ENABLE_JMX</code></td>
+            <td>To enable remote JMX, such as for profiling with VisualVM or JMC, add the environment variable ENABLE_JMX=true</td>
+            <td><code>false</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>JMX_HOST</code></td>
+            <td>If JMX is enabled, set JMX_HOST to the IP/host running the Docker container, and add a port forwarding of TCP port 7091</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>USE_AIKAR_FLAGS</code></td>
+            <td><a href="https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft/">Aikar has done some research</a> into finding the optimal JVM flags for GC tuning, which becomes more important as more users are connected concurrently</td>
+            <td><code>false</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>JVM_OPTS</code></td>
+            <td>General JVM options can be passed to the Minecraft Server invocation by passing a <code>JVM_OPTS</code> environment variable. The JVM requires -XX options to precede -X options, so those can be declared in <code>JVM_XX_OPTS</code>. Both variables are space-delimited, raw JVM arguments</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>JVM_XX_OPTS</code></td>
+            <td>General JVM options can be passed to the Minecraft Server invocation by passing a <code>JVM_OPTS</code> environment variable. The JVM requires -XX options to precede -X options, so those can be declared in <code>JVM_XX_OPTS</code>. Both variables are space-delimited, raw JVM arguments</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>JVM_DD_OPTS</code></td>
+            <td>As a shorthand for passing several system properties as -D arguments, you can instead pass a comma separated list of name=value or name:value pairs with JVM_DD_OPTS. (The colon syntax is provided for management platforms like Plesk that don't allow = inside a value.)</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>EXTRA_ARGS</code></td>
+            <td>Arguments that would usually be passed to the jar file (those which are written after the filename)</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>LOG_TIMESTAMP </code></td>
+            <td>To include the timestamp with each log set to <code>true</code></td>
+            <td><code>false</code></td>
             <td>⬜️</td>
         </tr>
     </tbody>
@@ -210,11 +290,161 @@
             <td>⬜️</td>
         </tr>
         <tr>
+            <td><code>LEVEL</code></td>
+            <td>You can either switch between world saves or run multiple containers with different saves by using the LEVEL option</td>
+            <td><code>world</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>ONLINE_MODE</code></td>
+            <td>By default, server checks connecting players against Minecraft's account database. If you want to create an offline server or your server is not connected to the internet, you can disable the server to try connecting to minecraft.net to authenticate players</td>
+            <td><code>true</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>ALLOW_FLIGHT</code></td>
+            <td>Allows users to use flight on your server while in Survival mode, if they have a mod that provides flight installed.</td>
+            <td><code>FALSE</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>SERVER_NAME</code></td>
+            <td>The server name</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>SERVER_PORT</code></td>
+            <td>Only change this value if you know what you're doing. It is only needed when using host networking and it is rare that host networking should be used.</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>PLAYER_IDLE_TIMEOUT</code></td>
+            <td>player-idle-timeout</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>ENABLE_JMX</code></td>
+            <td>enable-jmx-monitoring</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>SYNC_CHUNK_WRITES</code></td>
+            <td>sync-chunk-writes</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>ENABLE_STATUS</code></td>
+            <td>enable-status</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>ENTITY_BROADCAST_RANGE_PERCENTAGE</code></td>
+            <td>entity-broadcast-range-percentage</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>FUNCTION_PERMISSION_LEVEL</code></td>
+            <td>function-permission-level</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>NETWORK_COMPRESSION_THRESHOLD</code></td>
+            <td>network-compression-threshold</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>OP_PERMISSION_LEVEL</code></td>
+            <td>op-permission-level</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>PREVENT_PROXY_CONNECTIONS</code></td>
+            <td>prevent-proxy-connections</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>USE_NATIVE_TRANSPORT</code></td>
+            <td>use-native-transport</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>SIMULATION_DISTANCE</code></td>
+            <td>simulation-distance</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>EXEC_DIRECTLY</code></td>
+            <td>If you would like to docker attach to the Minecraft server console with color and interactive capabilities, then set to <code>true</code></td>
+            <td><code>false</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>STOP_SERVER_ANNOUNCE_DELAY</code></td>
+            <td>To allow time for players to finish what they're doing during a graceful server shutdown, set <code>STOP_SERVER_ANNOUNCE_DELAY</code> to a number of seconds to delay after an announcement is posted by the server.</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>PROXY</code></td>
+            <td>You may configure the use of an HTTP/HTTPS proxy by passing the proxy's URL</td>
+            <td><code>false</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>CONSOLE</code></td>
+            <td>Some older versions (pre-1.14) of Spigot required <code>--noconsole</code> to be passed when detaching stdin</td>
+            <td><code>TRUE</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>GUI</code></td>
+            <td>Some older servers get confused and think that the GUI interface is enabled.</td>
+            <td><code>TRUE</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>STOP_DURATION</code></td>
+            <td>When the container is signalled to stop, the Minecraft process wrapper will attempt to send a "stop" command via RCON or console and waits for the process to gracefully finish.</td>
+            <td><code>60</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>SETUP_ONLY</code></td>
+            <td>If you are using a host-attached data directory, then you can have the image setup the Minecraft server files and stop prior to launching the server process by setting this to <code>true</code></td>
+            <td><code>false</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>USE_FLARE_FLAGS</code></td>
+            <td>To enable the JVM flags required to fully support the <a href="https://blog.airplane.gg/flare">Flare profiling suite</a>.</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>USE_SIMD_FLAGS</code></td>
+            <td>Support for optimized SIMD operation</td>
+            <td><code>false</code></td>
+            <td>⬜️</td>
+        </tr>
+        <!-- <tr>
             <td><code></code></td>
             <td></td>
             <td><code></code></td>
             <td>⬜️</td>
-        </tr>
+        </tr> -->
     </tbody>
 </table>
 
@@ -326,6 +556,174 @@
             <td><code>false</code></td>
             <td>⬜️</td>
         </tr>
+        <tr>
+            <td><code>RCON_CMDS_STARTUP</code></td>
+            <td>RCON commands can be configured to execute when the server starts, a client connects, or a client disconnects</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>RCON_CMDS_ON_CONNECT</code></td>
+            <td>RCON commands can be configured to execute when the server starts, a client connects, or a client disconnects</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>RCON_CMDS_ON_DISCONNECT</code></td>
+            <td>RCON commands can be configured to execute when the server starts, a client connects, or a client disconnects</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>RCON_CMDS_LAST_DISCONNECT</code></td>
+            <td>RCON commands can be configured to execute when the server starts, a client connects, or a client disconnects</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>RCON_CMDS_STARTUP</code></td>
+            <td>RCON commands can be configured to execute when the server starts, a client connects, or a client disconnects</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+    </tbody>
+</table>
+
+### **AUTOPAUSE**
+
+!!! note
+
+    Autopause is not compatible with `EXEC_DIRECTLY=true` and the two cannot be set together.
+
+<table>
+    <thead>
+        <tr>
+            <th>NAME</th>
+            <th>DESCRIPTION</th>
+            <th>DEFAULT</th>
+            <th>REQUIRED</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>ENABLE_AUTOPAUSE</code></td>
+            <td>Enable the Autopause functionality</td>
+            <td><code>FALSE</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>AUTOPAUSE_TIMEOUT_EST</code></td>
+            <td>describes the time between the last client disconnect and the pausing of the process</td>
+            <td><code>3600</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>AUTOPAUSE_TIMEOUT_INIT</code></td>
+            <td>describes the time between server start and the pausing of the process, when no client connects in-between</td>
+            <td><code>600</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>AUTOPAUSE_TIMEOUT_KN</code></td>
+            <td>describes the time between knocking of the port (e.g. by the main menu ping) and the pausing of the process, when no client connects in-between</td>
+            <td><code>120</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>AUTOPAUSE_PERIOD</code></td>
+            <td>describes period of the daemonized state machine, that handles the pausing of the process</td>
+            <td><code>10</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>AUTOPAUSE_KNOCK_INTERFACE</code></td>
+            <td>Describes the interface passed to the knockd daemon. If the default interface does not work, run the ifconfig command inside the container and derive the interface receiving the incoming connection from its output. The passed interface must exist inside the container. Using the loopback interface (lo) does likely not yield the desired results.</td>
+            <td><code>eth0</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>DEBUG_AUTOPAUSE</code></td>
+            <td>Adds additional debugging output for AutoPause</td>
+            <td><code>false</code></td>
+            <td>⬜️</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+### **AUTOSTOP**
+
+!!! note
+
+    AutoStop function is incompatible with the Autopause functionality, as they basically cancel out each other.
+
+<table>
+    <thead>
+        <tr>
+            <th>NAME</th>
+            <th>DESCRIPTION</th>
+            <th>DEFAULT</th>
+            <th>REQUIRED</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>ENABLE_AUTOSTOP</code></td>
+            <td>Enable the AutoStop functionality</td>
+            <td><code>FALSE</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>AUTOSTOP_TIMEOUT_EST</code></td>
+            <td>describes the time between the last client disconnect and the stopping of the server</td>
+            <td><code>3600</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>AUTOSTOP_TIMEOUT_INIT</code></td>
+            <td>describes the time between server start and the stopping of the server, when no client connects in-between</td>
+            <td><code>1800</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>AUTOSTOP_PERIOD</code></td>
+            <td>describes period of the daemonized state machine, that handles the stopping of the serve</td>
+            <td><code>10</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>DEBUG_AUTOSTOP</code></td>
+            <td>Adds additional logging for AutoStop</td>
+            <td><code>false</code></td>
+            <td>⬜️</td>
+        </tr>
+    </tbody>
+</table>
+
+
+### **CURSEFORGE**
+
+!!! note
+
+     A CurseForge API key is required to use a CurseForge type server. Go to their [developer console](https://console.curseforge.com/), generate an API key, and set the environment variable CF_API_KEY
+
+<table>
+    <thead>
+        <tr>
+            <th>NAME</th>
+            <th>DESCRIPTION</th>
+            <th>DEFAULT</th>
+            <th>REQUIRED</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>ENABLE_AUTOSTOP</code></td>
+            <td>Enable the AutoStop functionality</td>
+            <td><code>FALSE</code></td>
+            <td>⬜️</td>
+        </tr>
     </tbody>
 </table>
 
@@ -333,8 +731,8 @@
     <th colspan="4"><h4><strong></strong></h4></th>
 </tr> -->
 <!-- <tr>
-    <td><code></code></td>
-    <td></td>
-    <td><code></code></td>
-    <td>⬜️</td>
-</tr> -->
+            <td><code></code></td>
+            <td></td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr> -->
