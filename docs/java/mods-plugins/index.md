@@ -197,9 +197,13 @@ Instead of mounting the `/data` volume, you can instead specify the URL of a ZIP
 
     docker run -d -e WORLD=http://www.example.com/worlds/MySave.zip ...
 
-**NOTE:** This URL must be accessible from inside the container. Therefore, you should use an IP address or a globally resolvable FQDN, or else the name of a linked container.
+!!! note 
+    
+    This URL must be accessible from inside the container. Therefore, you should use an IP address or a globally resolvable FQDN, or else the name of a linked container.
 
-**NOTE:** If the archive contains more than one `level.dat`, then the one to select can be picked with `WORLD_INDEX`, which defaults to 1.
+!!! note
+
+    If the archive contains more than one `level.dat`, then the one to select can be picked with `WORLD_INDEX`, which defaults to 1.
 
 ### Cloning world from a container path
 
@@ -221,12 +225,14 @@ The world will only be downloaded or copied if it doesn't exist already. Set `FO
 ### Custom worlds directory path
 To set a custom worlds directory for the Multiverse plugin on a baremetal server, you'd pass the `--world-dir` argument after the jar file.
 In order to accomplish the same in a containerized server, set the `EXTRA_ARGS` environment variable in your command line or docker compose yaml to the same argument string. For example:
+
 ```
 docker run -d -e EXTRA_ARGS='--world-dir ./worlds/'
 ```
 `--world-container`, `-W`, and `--universe` are aliases to `--world-dir` and can also be used.
 
 ### Datapacks
+
 Datapacks can be installed in a similar manner to mods/plugins. There are many environment variables which function in the same way they do for [mods](#working-with-mods-and-plugins): 
 
 * `DATAPACKS`: comma-separated list of zip file URL, zip file in container, or directory in container
@@ -257,20 +263,22 @@ Accepted Parameters:
 - `VANILLATWEAKS_SHARECODE`: comma separated list of share codes
 
 Example of expected VanillaTweaks share codes: 
-  **Note**: ResourcePacks, DataPacks, and CraftingTweaks all have separate sharecodes
+  
+!!! note 
 
-```yaml
+    ResourcePacks, DataPacks, and CraftingTweaks all have separate sharecodes
+
+``` yaml
 VANILLATWEAKS_SHARECODE: MGr52E,tF1zL2,LnEDwT
 ```
 
 Example of expected VanillaTweaks files:
 
-```yaml
+``` yaml
 VANILLATWEAKS_FILE: /config/vt-datapacks.json,/config/vt-craftingtweaks.json,/config/vt-resourcepacks.json
 ```
 
-Datapacks Json:
-```json
+``` json title="DataPacks json"
 {
   "type": "datapacks",
   "version": "1.18",
@@ -284,8 +292,7 @@ Datapacks Json:
 }
 ```
 
-Resourcepacks Json:
-```json
+``` json title="ResourcePacks json"
 {
     "type": "resourcepacks",
     "version": "1.18",
@@ -295,8 +302,8 @@ Resourcepacks Json:
 }
 ```
 
-CraftingTweaks Json:
-```json
+
+``` json title="CraftingTweaks Json"
 {
     "type": "craftingtweaks",
     "version": "1.18",

@@ -1,6 +1,6 @@
 - itzg Helm Chart:
-  - [GitHub repo](https://github.com/itzg/minecraft-server-charts)
-  - [Helm Chart repo](https://itzg.github.io/minecraft-server-charts/)
+    - [GitHub repo](https://github.com/itzg/minecraft-server-charts)
+    - [Helm Chart repo](https://itzg.github.io/minecraft-server-charts/)
 - [mcsh/server-deployment](https://github.com/mcserverhosting-net/charts)
 
 ### Examples
