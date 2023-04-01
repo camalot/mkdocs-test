@@ -719,17 +719,85 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
     </thead>
     <tbody>
         <tr>
-            <td><code>ENABLE_AUTOSTOP</code></td>
-            <td>Enable the AutoStop functionality</td>
-            <td><code>FALSE</code></td>
+            <td><code>CF_API_KEY</code></td>
+            <td><strong>YOUR</strong> CurseForge (Eternal) API Key.</td>
+            <td><code></code></td>
+            <td>✅</td>
+        </tr>
+        <tr>
+            <td><code>CF_PAGE_URL</code></td>
+            <td>Pass a page URL to the modpack or a specific file</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>CF_SLUG</code></td>
+            <td>Instead of a URL, the modpack slug can be provided.</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>CF_FILE_ID</code></td>
+            <td>The mod curseforge numerical ID.</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>CF_FILENAME_MATCHER</code></td>
+            <td>Specify a substring to match the desired filename</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>CF_EXCLUDE_INCLUDE_FILE</code></td>
+            <td>Global and per modpack exclusions can be declared in a JSON file and referenced with this variable. <br /><br />By default, the <a href="https://github.com/itzg/docker-minecraft-server/blob/master/files/cf-exclude-include.json">file bundled with the image</a> will be used, but can be disabled by setting this to an empty string. The schema of this file is <a href="https://github.com/itzg/mc-image-helper#excludeinclude-file-schema">documented here</a>.</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>CF_EXCLUDE_MODS</code></td>
+            <td>Mods can be excluded by passing a comma or space delimited list of project slugs or IDs</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>CF_FORCE_INCLUDE_MODS</code></td>
+            <td>Mods can be included by passing a comma or space delimited list of project slugs or IDs</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>CF_FORCE_SYNCHRONIZE</code></td>
+            <td>Forces the excludes/includes to be re-evaluated</td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>CF_SET_LEVEL_FROM</code></td>
+            <td>Some modpacks come with world/save data via a worlds file and/or the overrides provided with the modpack. Either approach can be selected to set the LEVEL to the resulting saves directory by setting this to either:
+            <ul>
+                <li>WORLD_FILE</li>
+                <li>OVERRIDES</li>
+            </ul></td>
+            <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>CF_PARALLEL_DOWNLOADS</code></td>
+            <td>specify how many parallel mod downloads to perform</td>
+            <td><code>4</code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>CF_OVERRIDES_SKIP_EXISTING</code></td>
+            <td>if set, files in the overrides that already exist in the data directory are skipped. world data is always skipped, if present.</td>
+            <td><code>false</code></td>
             <td>⬜️</td>
         </tr>
     </tbody>
 </table>
 
-<!-- <tr>
-    <th colspan="4"><h4><strong></strong></h4></th>
-</tr> -->
+<!-- ✅ ⬜️ -->
 <!-- <tr>
             <td><code></code></td>
             <td></td>
